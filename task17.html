@@ -1,20 +1,60 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head>
+	<title>Time And Date</title>
+	<link rel="icon" href="Images/Time.png" type="image/png" sizes="16x16">
+	<h2>Check the time now⏲</h2>
+</head>
+<body>	
 
-
-
-<h2>Check The Time⏲</h2>
-
-<p id="demo"></p>
-
-<script>
-var text = "";
-var i = 0;
-while (i<10){
- document.getElementById('demo').innerHTML=Date();
+<style>
+	#clock{
+width: 900px;
+margin:100px;
+text-align: center;
+font-size: 100px
+	}
+html{background-color: #000058;
+	text-align: center;
+	padding: 200px;
+	color: #FFFFFF;
 }
-document.getElementById("demo").innerHTML = text;
+</style>
+
+<div id='clock'></div>
+ 
+<script type="text/javascript">
+		setInterval(displayclock,100);
+		function displayclock(){
+		var time = new Date();
+		var hrs = time.getHours();
+		var min= time.getMinutes();
+		var sec= time.getSeconds();
+		if (sec<10) {
+			sec="0"+sec;
+
+		}
+		if (min<10) {
+			min="0"+min;
+		}
+	
+
+		document.getElementById('clock').innerHTML=hrs+":"+min+":"+sec;
+
+
+}
+
+
 </script>
+
+
+
+ 
+
+
+
+
+
+
 </body>
 </html>
