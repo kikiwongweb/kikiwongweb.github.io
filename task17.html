@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Time And Date</title>
+	<title>Time</title>
 	<link rel="icon" href="Images/Time.png" type="image/png" sizes="16x16">
 	<h2>Check the time now⏲</h2>
 </head>
@@ -37,6 +37,8 @@ html{background-color: #000058;
 		if (min<10) {
 			min="0"+min;
 		}
+		if (hrs<12) {
+			hrs="12"+hrs;
 	
 
 		document.getElementById('clock').innerHTML=hrs+":"+min+":"+sec;
