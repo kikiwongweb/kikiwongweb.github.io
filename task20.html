@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title> Lucky Draw</title>
+	<link rel="icon" href="Images/1f381.png" type="image/png" sizes="32x32">
+	<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+	html{
+	background-color:#ff007f;
+	text-align: center;
+	padding: 200px;
+	color: #FFFFFF;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-size: 50px;
+}
+
+button{
+	background-color:pink;
+	font-family: 'Kumbh Sans', sans-serif;
+	text-decoration: none;
+	display: inline-block;
+	border: none;
+	border-radius: 10px;
+	padding:25px;
+	color:#ff007f;
+	font-size: 25px;
+	outline: none;
+
+}
+
+button:hover{
+	background-color:#add8e6;
+	color:white;
+	
+
+}
+
+</style>
+
+
+
+<p>Random Number</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(){
+ document.getElementById("demo").innerHTML=Math.floor(Math.random()*1000);
+}
+
+</script>
+</body>
+</html>
