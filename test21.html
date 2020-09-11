@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>亂碼產生器</title>
+	<link rel="icon" href="Images/1f381.png" type="image/png" sizes="32x32">
+	<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+
+<body>
+	<style>
+		
+	html{
+	background-color:grey;
+	text-align: center;
+	padding: 200px;
+	color: #FFFFFF;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-size: 100px;
+}
+</style>
+
+<P></P>
+<p id="demo"></p>
+
+
+<script>
+var interval= 50;
+var myVar=setInterval(draw, interval);
+
+function draw(){
+	document.getElementById("demo").innerHTML=Math.random()*100000000000000000;
+}
+</script>
+</body>
+</html>
