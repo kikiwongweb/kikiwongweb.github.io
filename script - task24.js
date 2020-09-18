@@ -54,9 +54,9 @@ function stopWatch(){
     }
 
     //Display updated time values to user
-    document.getElementById("display").innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
-
+    document.getElementById("display").innerHTML =Math.floor(Math.random()*100);
 }
+
 
 
 
@@ -65,29 +65,18 @@ function startStop(){
     if(status === "stopped"){
 
         //Start the stopwatch (by calling the setInterval() function)
-        interval = window.setInterval(stopWatch, 10);
-        document.getElementById("startStop").innerHTML = "STOP";
+        interval = window.setInterval(stopWatch, 0);
+        document.getElementById("startStop").innerHTML = "停止抽獎";
         status = "started";
 
     }
     else{
 
         window.clearInterval(interval);
-        document.getElementById("startStop").innerHTML = "START";
+        document.getElementById("startStop").innerHTML = "重新抽獎";
         status = "stopped";
 
     }
 
 }
 
-//Function to reset the stopwatch
-function reset(){
-
-    window.clearInterval(interval);
-    seconds = 0;
-    minutes = 0;
-    hours = 0;
-    document.getElementById("display").innerHTML = "00:00:00";
-    document.getElementById("startStop").innerHTML = "START";
-
-}
