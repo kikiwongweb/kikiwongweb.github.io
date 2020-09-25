@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="Images/下載.png" type="image/png" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <title>Today is ...</title>
+ </head>
+<body>
+
+   <style>
+      html{
+         background-color: #33CAFF;
+         text-align: center;
+         color: #FF006B;
+         padding-top: 200px;
+         font-size: 100px;
+         font-family: 'Quicksand', sans-serif;
+      }
+
+
+      
+   </style>
+
+<span id="text"></span> <span id="day"></span>
+
+
+<script>
+var day;
+switch (new Date().getDay()) {
+ case 0:
+   day = "Sunday"; 
+   document.getElementById("day").style.color = "#E11E78";
+   break;
+ case 1:
+   day = "Monday"; 
+   document.getElementById("day").style.color = "#00A1FF";
+   break;
+ case 2:
+   day = "Tuesday";
+   document.getElementById("day").style.color = "#00FFB7";
+   break;
+ case 3:
+   day = "Wednesday";
+   document.getElementById("day").style.color = "#69007A";
+   break;
+ case 4:
+   day = "Thursday";
+   document.getElementById("day").style.color = "#5FD3C3";
+   break;
+ case 5:
+   day = "Friday";
+   document.getElementById("day").style.color = "#FFE000";
+   break;
+ case  6:
+   day = "Saturday";
+   document.getElementById("day").style.color = "#00EF80";
+}
+
+document.getElementById("text").innerHTML = "Today is ";
+
+document.getElementById("day").innerHTML = day;
+
+
+</script>
+
+
+</body>
+</html>
