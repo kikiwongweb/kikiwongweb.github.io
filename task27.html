@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<title>PRANK YOUR COMPUTER BUT NOT YOU😜</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+#container {
+ width: 400px;
+ height: 400px;
+ position: relative;
+ background: blue;
+  left: 50%;
+  margin-left: -200px;
+  top: 50%;
+  margin-top: 60px;
+}
+#animate {
+ width: 50px;
+ height: 50px;
+ position: absolute;
+ background-color: pink;
+ border-radius: 100000000000px;
+}
+#animate2 {
+ width: 50px;
+ height: 50px;
+ position: absolute;
+ background-color: green;
+ border-radius: 100000000000px;
+}
+
+
+html{
+	text-align: center;
+	padding-top: 200px;
+
+}
+
+
+
+
+button{
+	background-color:purple;
+	border-radius: 10px;
+	height: 60px;
+	outline: none;
+	color: white;
+	width: 100px;
+	text-decoration: none;
+	border: none;
+}
+button:hover{
+	background-color: blue;
+}
+}
+</style>
+<body>
+
+<p><button onclick="myMove()">CLICK ME x2 </button></p>
+
+<div id ="container">
+ <div id ="animate"></div>
+ <div id ="animate2"></div>
+
+</div>
+
+<script>
+function myMove() {
+ var elem = document.getElementById("animate"); 
+ var elem2= document.getElementById("animate2");  
+ var pos = 0;
+ var pos2= 350;
+  var id = setInterval(frame, 0);
+ function frame() {
+   if (pos == -50) {
+     clearInterval(id);
+   } else {
+     pos++;
+     pos2--;
+     elem.style.top = pos + "px";
+     elem.style.left = pos + "px";
+
+     elem2.style.top = pos + "px";
+     elem2.style.right = pos + "px";
+   }
+ }
+}
+</script>
+
+</body>
+</html>
