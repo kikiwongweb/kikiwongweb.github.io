@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CHANGE WITH YOUR KEYBOARD</title>
+	<link rel="icon" href="Images/KEYBOARD.png" type="image/png" sizes="32x32">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<style>
+		p{
+			font-family: 'Poppins', sans-serif;
+			font-size: 50px;
+
+		}
+		html:hover{
+			background-color:#FF90B0; 
+		}
+		
+		html{
+			text-align: center;
+			padding-top: 200px;
+			color: #490075;
+			background-color: #FFCAD9;
+
+
+		}
+		#demo{`
+			outline-color: none;
+
+		}
+	</style>
+
+
+
+<p>Type something in the box</p>
+
+<input type="text" id="demo" onkeydown="keydownFunction()" onkeyup="keyupFunction()">
+
+<script>
+function keydownFunction() {
+  document.getElementById("demo").style.backgroundColor = "#B6E8FF";
+}
+
+function keyupFunction() {
+  document.getElementById("demo").style.backgroundColor = "#FFCDB6";
+}
+</script>
+
+</body>
+</html>
