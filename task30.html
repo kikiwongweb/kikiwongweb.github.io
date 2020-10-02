@@ -49,7 +49,10 @@ function myFunction(event) {
 
  if (x == "g" || x == "G") {
      document.getElementById("myDiv").style.backgroundColor = "purple";
-    setTimeout(alert ("🍇"), 3000);
+    setTimeout(myFunction , 0);
+    function myFunction() {
+ alert('🍇');
+}
 
  }
  if (x == "h" || x == "H") {
