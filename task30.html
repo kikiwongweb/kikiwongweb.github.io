@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html id="myDiv">
+<head>
+	<title>Have you press...</title>
+	<link rel="icon" href="Images/KEYBOARD.png" type="image/png" sizes="32x32">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<body>
+	<style>
+		
+			p{
+			font-family: 'Poppins', sans-serif;
+			font-size: 50px;
+		}
+
+		html{
+			padding-top: 200px;
+			text-align: center;
+			background-color: #FFCAD9;
+		}
+	</style>
+
+<p>TRY TO PRESS "A-L" on YOUR KEYBOARD</p>
+
+<input type="text" size="40" onkeydown="myFunction(event)">
+
+<script>
+function myFunction(event) {
+ var x = event.key;
+
+ // If the pressed keyboard button is "a" or "A" (using caps lock or shift), alert some text.
+ if (x == "a" || x == "A") {
+    document.getElementById("myDiv").style.backgroundColor = "Red";
+ }
+ if (x == "b" || x == "B") {
+   document.getElementById("myDiv").style.backgroundColor = "Orange";
+ }
+ if (x == "c" || x == "C") {
+    document.getElementById("myDiv").style.backgroundColor = "#FFCAD9"; 
+ }
+ if (x == "d" || x == "D") {
+    document.getElementById("myDiv").style.backgroundColor = "Yellow";
+ }
+ if (x == "e" || x == "E") {
+   alert ("You pressed the 'Egg' key!");
+ }
+ if (x == "f" || x == "F") {
+   alert ("You pressed the 'Fire' key!");
+ }
+
+ if (x == "g" || x == "G") {
+     document.getElementById("myDiv").style.backgroundColor = "purple";
+    setTimeout(alert ("🍇"), 3000);
+
+ }
+ if (x == "h" || x == "H") {
+ alert ("🥩");
+   document.getElementById("myDiv").style.backgroundColor = "lightpink";
+ }
+ if (x == "i" || x == "I") {
+    document.body.style.backgroundColor = "red";
+ }
+ if (x == "j" || x == "J") {
+   alert ("You pressed the 'J' key!");
+ }
+ if (x == "k" || x == "K") {
+   alert ("You pressed the 'K' key!");
+ }
+ if (x == "l" || x == "L") {
+   alert ("You pressed the 'L' key!");
+ }
+
+}
+
+</script>
+
+</body>
+</html>
