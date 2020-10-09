@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<style>
+		html{
+			background-image:url(https://wallpaperaccess.com/full/188825.jpg);
+			background-repeat: no-repeat;
+			background-size:cover;
+			color: white;
+			font-size: 50px;
+			text-align: center;
+			padding-top: 200px;
+					}
+
+
+	</style>
+
+<p>Try to click the button to know how big was your screen</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+ var x = "Total Width: " + screen.width + "px";
+ document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+</body>
+</html>
