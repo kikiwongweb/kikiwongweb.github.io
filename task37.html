@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<style>
+html{
+text-align: center;
+}
+</style>
+<body>
+
+<h1>Are you a creative person?</h1>
+
+<label for="myCheck">Do you like to think about imaginary things?</label>
+<input type="checkbox" id="myCheck" onclick="myFunction()"><br>
+<label for="myCheck">Do you like to create new things?</label>
+<input type="checkbox" id="myCheck2" onclick="myFunction()"><br>
+
+<p>Your score is: </p><p id="text"></p>
+
+<script>
+function myFunction() {
+ var checkBox = document.getElementById("myCheck");
+ var checkBox2 = document.getElementById("myCheck2");
+ var text = document.getElementById("text");
+ var score = 0;
+ if (checkBox.checked == true){
+   score = score - 100;
+ }
+ if (checkBox2.checked == true){
+   score = score -5;
+ }
+ text.innerHTML = score;
+}
+</script>
+
+</body>
+</html>
+</html>
