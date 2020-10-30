@@ -1,23 +1,754 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kiki Webpage</title>
-		<link rel="icon" href="Images/Sumiko style rabbit.png" type="image/png" sizes="16x16">
-		<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
-</head>
-<body>
-	<style>
-		html{
-			background-color: #FFCCDC;
-			padding-top: 200px;
-			font-family: 'Didact Gothic', sans-serif;
-			text-align: center;
-		}
+  <title>Kiki Webpage</title>
+    <link rel="icon" href="Images/Sumiko style rabbit.png" type="image/png" sizes="16x16">
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+</script>
 
 
-	</style>
+<style>
+	
+  body{
+  margin:0px;
+  padding:0px;
+  font-family: helvetica;
+  }
+</style>
+<!-------------------------------------------------------------------------------->
 
-	<a href="Sushi.html">Sushi</a>
+<style>
+  .menuspace{
+  overflow: hidden;
+    background-color: rgb(50,50,50);
+    text-align: center;
+    height: 20px;
+    padding:10px;
 
-</body>
+  }
+
+  
+</style>
+<div class= "menuspace">
+  
+</div>
+<!-------------------------------------------------------------------------------->
+
+<style>
+  .menu{
+  overflow: hidden;
+    background-color: rgb(50,50,50);
+    width: 100%;
+    text-align: center;
+    height: 20px;
+    padding:10px;
+    position: fixed;
+    top: 0px;
+
+  }
+
+  .menu li{
+    color: rgb(194,194,194);
+    width: 50px;
+    display: inline;
+    padding: 30px;    
+    list-style: none;
+    font-size: 13px;
+
+
+  
+  }
+
+  .menu li:hover{
+    background-color:gray;
+  }
+
+@media only screen and (max-width: 800px) {
+    .menu {
+    overflow: hidden;
+    margin:0px;
+    padding:0px;
+    height:40px;
+}
+  .menu li{
+    display: block;
+    width: 100%;
+    margin:0px;
+    padding: 10px;
+    padding-left: 0px;
+
+      }
+
+  .menu li:hover{
+    background-color: rgb(50,50,50);
+  }
+
+  
+</style>
+<div class= "menu">
+  
+  <li>🥗</li>
+  <li>🍲</li>
+  <li>🍛</li>
+  <li>🍰</li>
+
+</div>
+<!-------------------------------------------------------------------------------->
+<style>
+  .notice {
+  overflow: hidden;
+    background-color: rgb(43,115,220);
+    width: 100%;
+    text-align: center;
+    height: 45px;
+    padding:0px;
+  
+  }
+  
+  .notice p{
+    color: white;
+    font-size: 13px;
+    word-spacing: 5px;
+  }
+  
+</style>
+<div class= "notice">
+
+
+</div>
+
+
+<!-------------------------------------------------------------------------------->
+<style>
+  .notice2 {
+  overflow: hidden;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    height: 45px;
+    padding:0px;
+  
+  }
+  
+  .notice2 p{
+  color: gray;
+    font-size: 13px;
+    width: 100%;
+    word-spacing: 3px;
+
+  }
+  .notice2 a{
+  color: gray;
+    display: inline;
+    padding: 30px;    
+    list-style: none;
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  .notice2 p :hover{
+  text-decoration: underline;
+  }
+</style>
+<div class= "notice2">
+
+
+</div>
+
+
+<!-------------------------------------------------------------------------------->
+<style>
+  
+  .one{
+  overflow: hidden;
+    background-color: silver;
+    background-image: url("Images/Myanmar.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    height: 600px;
+    padding:0px;
+  }
+    .one h1{
+    color: brown;
+    padding-top: 60px;
+    font-size: 55px;
+    margin: 5px;
+    }
+
+    .one h2{
+    color: gray;
+    padding-top: 0px;
+    margin:5px;
+    font-size: 25px;
+    font-weight: 1;
+    }
+
+    .one p{
+    color: gray;
+    padding-top: 20px;
+    margin:5px;
+    font-size: 15px;
+    font-weight: 1;
+    }
+    
+  
+</style>
+<div class= "one">
+  <h1>Myanmar</h1>
+  <h2>Where sunrise lights up your soul</h2>
+  <p>Read more ></p>
+</div>
+
+<!-------------------------------------------------------------------------------->
+<style>
+  
+  .two{
+  overflow: hidden;
+    background-color: silver;
+    background-image: url("Images/Canada.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    height: 600px;
+    padding:0px;
+    margin-top: 20px;
+  }
+    .two h1{
+    color: azure;
+    padding-top: 60px;
+    font-size: 55px;
+    margin: 5px;
+    }
+
+    .two h2{
+    color: gray;
+    padding-top: 0px;
+    margin:5px;
+    font-size: 25px;
+    font-weight: 1;
+    }
+
+    .two p{
+    color: gray;
+    padding-top: 20px;
+    margin:5px;
+    font-size: 15px;
+    font-weight: 1;
+    }
+    
+  
+</style>
+<div class= "two">
+  <h1>Canada</h1>
+  <h2>Living in Ice Age</h2>
+  <p>Read more ></p>
+</div>
+
+<!-------------------------------------------------------------------------------->
+<style>
+  
+  .three{
+  overflow: hidden;
+    background-color: silver;
+    background-image: url("Images/Australia.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    height: 600px;
+    padding:0px;
+    margin-top: 20px;
+  }
+    .three h1{
+    color: white;
+    padding-top: 200px;
+    font-size: 55px;
+    margin: 5px;
+    }
+
+    .three h2{
+    color: white;
+    padding-top: 0px;
+    margin:5px;
+    font-size: 25px;
+    font-weight: 1;
+    }
+
+    .three p{
+    color: white;
+    padding-top: 20px;
+    margin:5px;
+    font-size: 15px;
+    font-weight: 1;
+    }
+    
+  
+</style>
+<div class= "three">
+  <h1>Australia</h1>
+  <h2>Peering into the Wild</h2>
+  <p>Read more ></p>
+</div>
+
+<!-------------------------------------------------------------------------------->
+<style>
+  
+  .four{
+  overflow: hidden;
+  float: left;
+    background-color: silver;
+    background-image: url("Images/Maldives.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    height: 600px;
+    padding:0px;
+    margin-top: 20px;
+    width:49%;
+    margin-right: 10px;
+  
+  }
+    .four h1{
+    color: white;
+    padding-top: 100px;
+    font-size: 55px;
+    margin: 5px;
+    }
+
+    .four h2{
+    color: white;
+    padding-top: 0px;
+    margin:5px;
+    font-size: 25px;
+    font-weight: 1;
+    }
+
+    .four p{
+    color: white;
+    padding-top: 20px;
+    margin:5px;
+    font-size: 15px;
+    font-weight: 1;
+    }
+  
+  @media only screen and (max-width: 1000px) {
+    .four {
+    width: 100%;
+  }
+}
+  
+</style>
+<div class= "four">
+  <h1>Maldives</h1>
+  <h2>Chill Like a Boss</h2>
+  <p>Read more ></p>
+</div>
+<!-------------------------------------------------------------------------------->
+<style>
+  
+  .five{
+  overflow: hidden;
+  float: right;
+    background-color: silver;
+    background-image: url("Images/Cuba.jpg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    height: 600px;
+    padding:0px;
+    margin-top: 20px;
+    width:49%;
+    margin-left: 10px;
+  }
+    .five h1{
+    color: white;
+    padding-top: 100px;
+    font-size: 55px;
+    margin: 5px;
+    }
+
+    .five h2{
+    color: white;
+    padding-top: 0px;
+    margin:5px;
+    font-size: 25px;
+    font-weight: 1;
+    }
+
+    .five p{
+    color: white;
+    padding-top: 20px;
+    margin:5px;
+    font-size: 15px;
+    font-weight: 1;
+    }
+
+    @media only screen and (max-width: 1000px) {
+    .five {
+    width: 100%;
+  }
+    
+  
+</style>
+<div class= "five">
+  <h1>Cuba</h1>
+  <h2>Travel Back in Time</h2>
+  <p>Read more ></p>
+</div>
+<!-------------------------------------------------------------------------------->
+<style>
+  
+  .six{
+  overflow: hidden;
+  float: left;
+    background-color:#FFAB00;
+    background-image: url("Images/cake.png");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    height: 600px;
+    padding:0px;
+    margin-top: 20px;
+    width:49%;
+    margin-right: 10px;
+  
+  }
+    .six h1{
+    color: white;
+    padding-top: 100px;
+    font-size: 55px;
+    margin: 5px;
+    }
+
+    .six h2{
+    color: white;
+    padding-top: 0px;
+    margin:5px;
+    font-size: 25px;
+    font-weight: 1;
+    }
+
+    .six p{
+    color: white;
+    padding-top: 20px;
+    margin:5px;
+    font-size: 15px;
+    font-weight: 1;
+    }
+  
+  @media only screen and (max-width: 1000px) {
+    .six {
+    width: 100%;
+  } 
+  
+</style>
+<div class= "six">
+  <h1>CARROT CAKE</h1>
+  <h2>Dekiicious Desert</h2>
+  <a href ="cook-carrot cake.html" target="blank">COOK THE FOOD NOW</a>
+</div>
+<!-------------------------------------------------------------------------------->
+<style>
+  
+  .seven{
+  overflow: hidden;
+  float: right;
+    background-color: #FFF687;
+    background-image: url("Images/sushi.png");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    height: 600px;
+    padding:0px;
+    margin-top: 20px;
+    width:49%;
+    margin-left: 10px;
+  }
+    .seven h1{
+    color: white;
+    padding-top: 100px;
+    font-size: 55px;
+    margin: 5px;
+    }
+
+    .seven h2{
+    color: white;
+    padding-top: 0px;
+    margin:5px;
+    font-size: 25px;
+    font-weight: 1;
+    }
+
+    .seven p{
+    color: white;
+    padding-top: 20px;
+    margin:5px;
+    font-size: 15px;
+    font-weight: 1;
+    }
+    
+  @media only screen and (max-width: 1000px) {
+    .seven {
+    width: 100%;
+  }
+</style>
+<div class= "seven">
+  <h1>SUSHI</h1>
+  <h2>You must eat this food in Japan</h2>
+  <p>COOK THIS FOOD NOW</p>
+</div>
+<!-------------------------------------------------------------------------------->
+<style>
+  
+  .eight{
+  overflow: hidden;
+  float: left;
+    background-color: #FFF687;
+    background-image: url("Images/pizza.svg");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    height: 600px;
+    padding:0px;
+    margin-top: 20px;
+    width:49%;
+    margin-right: 10px;
+  
+  }
+    .eight h1{
+    color: white;
+    padding-top: 100px;
+    font-size: 55px;
+    margin: 5px;
+    }
+
+    .eight h2{
+    color: white;
+    padding-top: 0px;
+    margin:5px;
+    font-size: 25px;
+    font-weight: 1;
+    }
+
+    .eight p{
+    color: white;
+    padding-top: 20px;
+    margin:5px;
+    font-size: 15px;
+    font-weight: 1;
+    }
+    
+  @media only screen and (max-width: 1000px) {
+    .eight {
+    width: 100%;
+  }
+</style>
+<div class= "eight">
+  <h1>Pizza</h1>
+  <h2>The most classtic Itlay food</h2>
+  <p>COOK THIS FOOD NOW</p>
+</div>
+<!-------------------------------------------------------------------------------->
+<style>
+  
+  .nine{
+  overflow: hidden;
+  float: right;
+    background-color: #FFAB00;
+    background-image: url("Images/egg.png");
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    height: 600px;
+    padding:0px;
+    margin-top: 20px;
+    width:49%;
+    margin-left: 10px;
+  }
+    .nine h1{
+    color: white;
+    padding-top: 100px;
+    font-size: 55px;
+    margin: 5px;
+    }
+
+    .nine h2{
+    color: white;
+    padding-top: 0px;
+    margin:5px;
+    font-size: 25px;
+    font-weight: 1;
+    }
+
+    .nine p{
+    color: white;
+    padding-top: 20px;
+    margin:5px;
+    font-size: 15px;
+    font-weight: 1;
+    }
+    
+  @media only screen and (max-width: 1000px) {
+    .nine {
+    width: 100%;
+  }
+</style>
+<div class= "nine">
+  <h1>Indonesia</h1>
+  <h2>The Jungle Rook</h2>
+  <p>Read more ></p>
+</div>
+<!-------------------------------------------------------------------------------->
+<style>
+  
+  .eleven{
+     overflow: hidden;
+    float: right;
+    background-color: gray;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding:0px;
+    margin-top: 20px;
+    width:100%;
+  }
+
+  .ten{
+    overflow: hidden;
+    float: right;
+    background-color: gray;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    height: 300px;
+    padding:0px;
+    margin-top: 20px;
+    width:100%;
+    
+  }
+  .eleven h6{
+    width: 100%;
+    float: none;
+    text-align: center;
+    padding-left: 0px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    color:white;
+    font-style: bold;
+    font-size:15px;
+    }
+    
+  .col{
+    
+    }
+
+  .col p{
+    color: white;
+    padding-top: 0px;
+    padding-left: 6%;
+    margin:5px;
+    font-size: 13px;
+    font-weight: 1;
+    width:12%;
+    float: left;
+    height:20px;
+    }
+
+@media only screen and (max-width: 1000px) {
+  .ten{
+    overflow: scroll;
+
+  }
+
+
+  .col p{
+    width: 100%;
+    float: none;
+    text-align: center;
+    padding-left: 0%;
+  }
+  
+  
+</style>
+<div class= "eleven">
+  <h6>Places I have been to</h6>  
+<div class= "ten">
+  
+  <div class="col">
+  <p>Japan 🇯🇵</p>
+  <p>South Korea </p>
+  <p>Taiwan</p>
+  <p>China</p>
+  <p>Macau</p>
+  <p>Hong Kong 🇭🇰</p>
+  <p>United Kingdom 🇬🇧</p>
+  <p>Spain</p>  
+  <p>Portugal</p>
+  <p>Netherlands</p>
+  <p>Belgium</p>
+  <p>Germany</p>
+  <p>Switzerland</p>
+  <p>United States</p>
+  <p>Canada</p>
+  <p>Mexico 🇲🇽</p>
+  <p>Cuba</p>
+  <p>Dominican Republic</p>
+  <p>Australia</p>
+  <p>Fiji</p>
+  <p>Tonga</p>
+  <p>United Arab Emirates</p>
+  <p>Qatar</p>
+  <p>Jordan</p>
+  <p>Iceland</p>
+  <p>Finland</p>
+  <p>Estonia</p>
+  <p>Latvia</p>
+  <p>Lithuania</p>
+  <p>Morocco</p>
+  <p>Tunisia</p>
+  <p>Egypt</p>
+  <p>Philippines</p>
+  <p>India</p>
+  <p>Maldives</p>
+  <p>Myanmar</p>
+  <p>Russia</p>
+  <p>Poland</p>
+  <p>Czech Republic</p>
+  <p>Austria</p>
+  <p>Slovakia</p>
+  <p>Hungary</p>
+  <p>Singapore</p>
+  <p>Indonesia</p>
+  <p>Belize</p>
+  </div>
+  </div>
+
+
+  
+</div>
+
+<!-------------------------------------------------------------------------------->
+<style>
+.footer {
+  overflow: hidden;
+  float: right;
+    background-color: gray;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    height: 250px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width:100%;
+    color: white;
+    font-size: 10px;
+  }
+</style>
+
+
+
 </html>
