@@ -1,0 +1,106 @@
+<html>
+
+<title>Present simple VS Present continuous</title>
+<style>
+	.myEnglish{
+	text-align: center;
+}
+
+ol{
+	text-align: left;
+	display: inline-block;
+	
+}
+h1{
+	padding-top: 30px;
+	text-align: center;
+
+}
+
+
+
+.sw{
+	color: orange;	
+}
+input{
+border-radius: 100px;
+
+}
+
+
+
+</style>
+<body>
+<h1> Present simple VS Present continuous</h1>
+<div class="myEnglish">
+<ol>
+<li>John (go) <input id="myText" type="text" => to school by bus <span class="sw"> every day</span>.</li>
+<li>Jenny (eat) <input id="myText2" type="text" => spaghetti <span class="sw">twice a week.</span></li>
+<li>The Sun (rise) <input id="myText3" type="text" => up <span class="sw">now.</span></li>
+<li><span class="sw">Look!</span> It is(rain) <input id="myText4" type="text" =>.</li>
+
+<input type="submit"onclick="myFunction()" value="Submit">
+</ol>
+</div>
+<script>
+	
+
+ var textBox = document.getElementById("myText");
+ var textBox = document.getElementById("myText2");	
+ var textBox = document.getElementById("myText3");	
+ var textBox = document.getElementById("myText4");	
+
+function myFunction() {
+	if (document.getElementById("myText").value == "goes")  {
+  document.getElementById("myText").style.backgroundColor = "lightgreen";
+
+}
+else {
+document.getElementById("myText").style.backgroundColor = "red";
+
+}
+  
+
+
+	if (document.getElementById("myText2").value == "eats")  {
+  document.getElementById("myText2").style.backgroundColor = "lightgreen";
+
+}
+else {
+document.getElementById("myText2").style.backgroundColor = "red";
+
+}
+
+
+
+
+
+if (document.getElementById("myText3").value == "is rising")  {
+  document.getElementById("myText3").style.backgroundColor = "lightgreen";
+
+}
+else {
+document.getElementById("myText3").style.backgroundColor = "red";
+
+}
+
+if (document.getElementById("myText4").value == "raining")  {
+  document.getElementById("myText4").style.backgroundColor = "lightgreen";
+
+}
+else {
+document.getElementById("myText4").style.backgroundColor = "red";
+
+}
+
+}
+  
+
+
+
+
+
+</script>
+</body>
+</html>
+
