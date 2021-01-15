@@ -53,10 +53,10 @@
         background-size: contain;
         background-repeat: no-repeat;
         text-align: center;
-        width:90px;
-        height: 190px;
-        top: 68%;
-        left: 52%;
+        width:300px;
+        height: 400px;
+        top: 60%;
+        left: 50%;
         position: absolute;
         margin-top: -12em;
         margin-left: -9em;
@@ -71,16 +71,16 @@
         text-align: center;
         width:300px;
         height: 400px;
-        top: 50%;
-        left: 60%;
+        top: 60%;
+        left: 50%;
         position: absolute;
         margin-top: -12em;
         margin-left: -9em;
         z-index: -3;
     }
 
-     #bangs{
-        background-image: url("Images/baby/bangs-0.svg");
+     #Ears{
+        background-image: url("Images/Animals Project/Ears1.svg");
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -92,39 +92,26 @@
         position: absolute;
         margin-top: -12em;
         margin-left: -9em;
-        z-index: 2;
+        z-index: -5;
     }
 
-    #scarf{
-        background-image: url("Images/baby/scarf-0.svg");
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        text-align: center;
-        width:300px;
-        height: 400px;
-        top: 60%;
-        left: 50%;
-        position: absolute;
-        margin-top: -12em;
-        margin-left: -9em;
-        z-index: 5;
-    }
+ 
 
-    #top{
-        background-image: url("Images/baby/top-0.svg");
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        text-align: center;
-        width:300px;
+    #Mouth{ 
+        background-image: url("Images/Animals Project/Mouth1.svg");
+        background-position: center; 
+        background-size: contain; 
+        background-repeat:
+        no-repeat; 
+        text-align: center; 
+        width:300px; 
         height: 400px;
-        top: 60%;
-        left: 50%;
-        position: absolute;
-        margin-top: -12em;
-        margin-left: -9em;
-        z-index: 0;
+        top: 60%; 
+        left:50%;
+        position: absolute; 
+        margin-top: -12em; 
+        margin-left: -9em; 
+        z-index: 0; 
     }
 
     #belt{
@@ -279,52 +266,47 @@
     
 
     <div class ="buttons">
-    <button class="buttonBody" onClick="changeskin();">Body</button>
-    <button class="buttonEyes" onClick="changehat();">Eyes</button>
-    <button class="buttonWings" onClick="changehair();">Wings</button>
-    <button class="buttonEars" onClick="changebangs();">Ears</button>
-    <button class="buttonMouth" onClick="changetop();">Mouth</button>
-    <button class="buttonTails" onClick="changebelt();">Tails</button>
+    <button class="buttonBody" onClick="changeBody();">Body</button>
+    <button class="buttonEyes" onClick="changeEyes();">Eyes</button>
+    <button class="buttonWings" onClick="changeWings();">Wings</button>
+    <button class="buttonEars" onClick="changeEars();">Ears</button>
+    <button class="buttonMouth" onClick="changeMouth();">Mouth</button>
+    <button class="buttonTails" onClick="changeTails();">Tails</button>
   
     </div> 
 
 
 <script>
-    var skinnumber = Math.floor(Math.random() * 6)+1;
-    var hatnumber = Math.floor(Math.random() * 8)+1;
-    var hairnumber = Math.floor(Math.random() * 30)+1;
-    var bangsnumber = Math.floor(Math.random() * 17)+1;
-    var scarfnumber = Math.floor(Math.random() * 8)+1;
-    var topnumber = Math.floor(Math.random() * 16)+1;
-    var bottomnumber = Math.floor(Math.random() * 11)+1;
-    var beltnumber = Math.floor(Math.random() * 3)+1;
-    var shoesnumber = Math.floor(Math.random() * 1)+1;
+    var Bodynumber = Math.floor(Math.random() * 3)+1;
+    var Eyesnumber = Math.floor(Math.random() * 3)+1;
+    var Wingsnumber = Math.floor(Math.random() * 30)+1;
+    var Earsnumber = Math.floor(Math.random() * 17)+1;
+    var Mouthnumber = Math.floor(Math.random() * 16)+1;
+    var Tailsmnumber = Math.floor(Math.random() * 11)+1;
+ 
 
-    document.getElementById("skin").style.backgroundImage = `url('Images/baby/skin-${skinnumber}.svg')`;
-    document.getElementById("hat").style.backgroundImage = `url('Images/baby/hat-${hatnumber}.svg')`;
-    document.getElementById("hair").style.backgroundImage = `url('Images/baby/hair-${hairnumber}.svg')`;
-    document.getElementById("bangs").style.backgroundImage = `url('Images/baby/bangs-${bangsnumber}.svg')`;
-    document.getElementById("scarf").style.backgroundImage = `url('Images/baby/scarf-${scarfnumber}.svg')`;
-    document.getElementById("top").style.backgroundImage = `url('Images/baby/top-${topnumber}.svg')`;
-    document.getElementById("bottom").style.backgroundImage = `url('Images/baby/bottom-${bottomnumber}.svg')`;
-    document.getElementById("belt").style.backgroundImage = `url('Images/baby/belt-${beltnumber}.svg')`;
-    document.getElementById("shoes").style.backgroundImage = `url('Images/baby/shoes-${shoesnumber}.svg')`;
+    document.getElementById("Body").style.backgroundImage = `url('Images/Animals Project/Body${Bodynumber}.svg')`;
+    document.getElementById("Eyes").style.backgroundImage = `url('Images/Animals Project/Eyes${Eyesnumber}.svg')`;
+    document.getElementById("Wings").style.backgroundImage = `url('Images/baby/hair-${hairnumber}.svg')`;
+    document.getElementById("Ears").style.backgroundImage = `url('Images/baby/bangs-${bangsnumber}.svg')`;
+    document.getElementById("Mouth").style.backgroundImage = `url('Images/baby/top-${topnumber}.svg')`;
+    document.getElementById("Tails").style.backgroundImage = `url('Images/baby/bottom-${bottomnumber}.svg')`;
+ 
         
 
-    function changeskin() {
-        skinnumber += 1;
-        if (skinnumber > 6) {
-            skinnumber = 1;
+    function changeBody() {
+        Bodynumber += 1;
+        if (Bodynumber > 3) {
+            Bodynumber = 0;
         }
-        document.getElementById("skin").style.backgroundImage = `url('Images/baby/skin-${skinnumber}.svg')`;
-        }
+        document.getElementById("Body").style.backgroundImage = `url('Images/Animals Project/Body${Bodynumber}.svg')`;  }
 
-    function changehat() {
-        hatnumber += 1;
-        if (hatnumber > 8) {
-            hatnumber = 0;
+    function changeEyes() {
+        number += 1;
+        if (Eyesnumber > 3) {
+            Eyesnumber = 0;
         }
-        document.getElementById("hat").style.backgroundImage = `url('Images/baby/hat-${hatnumber}.svg')`;
+        document.getElementById("Eyes").style.backgroundImage = `url('Images/Animals Project/Eyes${Eyesnumber}.svg')`;
         }
 
     function changehair() {
