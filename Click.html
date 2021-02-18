@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type=range id="mySelect" onchange="myFunction()">
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+ var x = document.getElementById("mySelect").value;
+ document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+</script>
+
+</body>
+</html>

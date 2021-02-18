@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html id="color">
+<head>
+	<title>Colour Picker</title>
+	<link rel="icon" href="Images/picker.png" type="image/png" sizes="32x32">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+	<style>
+	html{
+		background-color: #ECE8F1;
+		font-family: 'Poppins', sans-serif;
+		text-align: center;	
+		color:white;
+	}
+
+	h1{
+		line-height: 4px;
+		padding-top:25px;
+	}
+	
+	</style>
+
+<h1>Make a Colour🎨</h1>
+<h2>Create it!</h2>
+
+<input type="range" id="myRange1" max="255" onchange="changeColor()">
+<input type="range" id="myRange2" max="255" onchange="changeColor()">
+<input type="range" id="myRange3" max="255" onchange="changeColor()">
+
+
+
+<div id="">
+ <script type="text/javascript">                              
+
+    function changeColor() {
+        var x = document.getElementById("myRange1").value ;
+        var y = document.getElementById("myRange2").value ;
+        var z = document.getElementById("myRange3").value ;
+        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        console.log(bgColor);
+  		
+        document.getElementById("color").style.backgroundColor = bgColor;
+
+    }
+    </script>
+</div>       
