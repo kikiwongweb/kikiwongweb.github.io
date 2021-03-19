@@ -14,7 +14,28 @@
 		color:#691D6D;
 		text-align: center;
 		padding-top: 200px;
+		cursor: default
 	}
+
+	button{
+background-color:#BA8DFF; 
+ border: none;
+ color: white;
+ border-radius: 50px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ cursor: not-allowed;
+	}
+
+	#billamt{
+		 cursor: text;
+		 background-color: white;
+
+
+	}
+
+
 </style>
 <body>
 <div id="container">
@@ -34,14 +55,26 @@
             <option value="0.16"> 🐈Cat</option>
             <option value="0.13"> 🐶Dog</option>
             <option value="0.95"> 🐦Parrot</option>
-            <option value="0.3"> 🐹Hamster</option>
-            <option value="0.05"> 🐠Fish</option>
+            <option value="0.3">  🐹Hamster</option>
+            <option value="0.20"> 🐼Panda</option>
+            <option value="0.14"> 🦝Red Panda</option>
+            <option value="0.4">  🐬Dophin</option>
+            <option value="0.26"> 🐧Penguin</option>
+            <option value="0.25"> 🦈Shark</option>
+            <option value="0.9">  🐅Tiger</option>
+            <option value="0.55"> 🐘Elephant</option>
+            <option value="0.3">  🐢Turtle</option>
+            <option value="0.07">  🐇Rabbit</option>
+            <option value="0.3">   🦭Seal</option>
+ 			<option value="0.27">  🐎Horse</option>
+ 			<option value="0.20">  🐒Monkey</option>
+
         </select>
 
     </form>
     
     
-    <button type="button" id="calculate">Calculate!</button>
+    <button type="button" id="calculate"> Calculate!</button>
 
   </div>
   <!--calculator end-->
@@ -63,7 +96,7 @@ function calculateTip() {
 
   //validate input
   if (billAmt === "" || serviceQual == 0) {
-    alert("Please enter values");
+    alert("Guys|Entre your Age🤐 ");
     return;
   }
   
