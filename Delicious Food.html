@@ -3,6 +3,8 @@
 <head>
   <title>Yummy Food</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
 <style>
 * {
   box-sizing: border-box;
@@ -11,13 +13,28 @@
 body {
   background-color: #f1f1f1;
   padding: 20px;
-  font-family: Arial;
+  font-family: 'Lexend', sans-serif;
 }
 
 /* Center website */
 .main {
   max-width: 1000px;
   margin: auto;
+}
+.content {
+  animation: fade 1s ;
+  position:relative;
+} 
+
+@keyframes fade {
+  0% {
+    opacity: 10%;
+    bottom:-50px;
+  }
+  100% {
+   opacity: 100%;
+   bottom
+  }
 }
 
 h1 {
@@ -60,6 +77,7 @@ h1 {
 .content {
   background-color: white;
   padding: 10px;
+  
 }
 
 /* The "show" class is added to the filtered elements */
@@ -288,8 +306,35 @@ img{
     <div class="content">
     <img src="Images/French Fries.jpg" alt="French Fries" style="width:100%">
       <h4>French Fries</h4>
-      <p>Deeped Fried Potat
-o</p>
+      <p>Deeped Fried Potato</p>
+    </div>
+  </div>
+    <div class="column Belgium Food">
+    <div class="content">
+    <img src="Images/Chocolate.jpg" alt="Chocolate" style="width:100%">
+      <h4>Chocolate</h4>
+      <p>Delicious Chocolate </p>
+    </div>
+  </div>
+    <div class="column Belgium Food">
+    <div class="content">
+    <img src="Images/Waffle.jpg" alt="Waffle" style="width:100%">
+      <h4>Waffle</h4>
+      <p>Sweet Waffles with berrys </p>
+    </div>
+  </div>
+   <div class="column Belgium Food">
+    <div class="content">
+    <img src="Images/Moules frites.jpeg" alt="Moules frites" style="width:100%">
+      <h4>Moules frites</h4>
+      <p>French Fries with Mussels</p>
+    </div>
+  </div>
+   <div class="column Belgium Food">
+    <div class="content">
+    <img src="Images/Steak tartare.jpg" alt="Steak tartare" style="width:100%">
+      <h4>Steak tartare</h4>
+      <p>Meat with an egg</p>
     </div>
   </div>
 <!-- END GRID -->
