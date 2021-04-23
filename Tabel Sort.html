@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tabel Sort</title>
+<link rel="icon" href="Images/122932.png" type="image/png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<style>
+
+  html{
+    background-color: #F0FFF0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+table {
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th {
+  cursor: pointer;
+}
+
+th, td {
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #BDFFBD
+}
+</style>
+</head>
+<body>
+
+<p><strong>Click the headers to sort the table.</strong></p>
+<p>The first time you click, the sorting direction is ascending (A to Z).</p>
+<p>Click again, and the sorting direction will be descending (Z to A):</p>
+
+<table id="myTable">
+  <tr>
+   <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+    <th onclick="sortTable(0)">Country</th>
+    <th onclick="sortTable(1)">Food</th>
+  </tr>
+  <td> <a href="https://blog.amigofoods.com/wp-content/uploads/2019/04/arepas.jpg">Colombia</a></td>
+    <td>Arepa</td>
+  </tr>
+  <tr>
+     <td> <a href="https://okdiario.com/img/2018/03/27/leche-tigre.jpg">Peru</a></td>
+    <td>Leche de tigre</td>
+  </tr>
+    <td> <a href="https://blog.amigofoods.com/wp-content/uploads/2020/10/ecuadorian-llapingachos.jpg">Ecuador</a></td>
+    <td> Llapingachos</td>
+  </tr>
+    <td> <a href="https://cdn.bolivia.com/sdi/2015/10/14/572da2075ee34590998f7e8b273990fc.jpg">Bolivia</a></td>
+    <td>Aji de fideo</td>
+  </tr>
+  <td> <a href="https://s.yimg.com/aah/amigofoods/completo-recipe-receta-completo-4.png">Chile </a></td>
+    <td>Completo</td>
+  </tr>
+  <td> <a href="https://www.carnival.com/awaywego/wp-content/uploads/2018/05/lambie-souse-grenada.jpg">Lambie Souse</a></td>
+    <td>Grenada </td>
+  </tr>
+  <td> <a href="https://3.bp.blogspot.com/-UscGJcKUVyw/XMXnKY4acKI/AAAAAAAAAC8/KirBlcuYo9kK_3hY1sBZsKsxNDJLYVWFQCLcBGAs/w1200-h630-p-k-no-nu/100189-1.JPG">Qatar </a></td>
+    <td>Saloona</td>
+  </tr>
+  <td> <a href="https://www.196flavors.com/wp-content/uploads/2014/01/balaleet-2.jpg">Bahrain </a></td>
+    <td>Balaleet</td>
+  </tr>
+  <td> <a href="https://www.196flavors.com/wp-content/uploads/2014/01/balaleet-2.jpg">Iceland </a></td>
+    <td>Lamb soup</td>
+  </tr>
+   
+   <td> <a href="https://www.carolinescooking.com/wp-content/uploads/2015/11/Danish-sm%C3%B8rrebr%C3%B8d-open-sandwiches-with-remoulade-1-1024x768.jpg">Denmark  </a></td>
+    <td>Smørrebrød</td>
+  </tr>
+   
+   <td> <a href="https://www.minmat.no/getfile.php/132051-1441696816/1.%20Bilder/2.%20Oppskrifter/92.%20Diverse%20middager/Kj%C3%B8ttboller%2C%20kj%C3%B8ttkaker%20etc./Kj%C3%B8ttboller.jpg%20%28mobile480%29.jpg">Norway </a></td>
+    <td>Kjøttboller</td>
+  </tr>
+   
+   <td> <a href="https://wfg22p.s3.amazonaws.com/media/dishes/gubbrora_2203-reg.jpg">Sweden </a></td>
+    <td>Gubbröra<</td>
+  </tr>
+   
+
+   
+    
+</table>
+
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("myTable");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc"; 
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++;      
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
