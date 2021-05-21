@@ -21,6 +21,11 @@ p{
   cursor: text;
 }
 
+#Para{
+  text-align: center;
+  color: white;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -53,8 +58,10 @@ p{
 </head>
 <body id="bg">
 
+  
+
 <div class="header">
-  <h2>Colour Blinking</h2>
+  <h2>Colour Blinking</h2><p id="Para">Hello</p>
   <div class="progress-container">
     <div class="progress-bar" id="myBar"></div>
   </div>  
@@ -106,7 +113,19 @@ function myFunction() {
   document.getElementById("f7").style.opacity = scrolled + 60+ "%" ;
   document.getElementById("f8").style.opacity = scrolled + 60+ "%" ;
   document.getElementById("f9").style.opacity = scrolled + 60+ "%" ;
-  document.getElementById("f10").style.opacity = scrolled + 60+ "%" ;
+  document.getElementById("f10").style.opacity =scrolled + 60+ "%" ;
+
+var n = scrolled.toFixed(0)
+
+document.getElementById("Para").innerHTML = n + "%"; 
+document.getElementById("Para").style.backgroundColor = bgColor;
+
+ var x = Math.floor(Math.random() * 256);
+        var y = Math.floor(Math.random() * 256);
+        var z = Math.floor(Math.random() * 256);
+  var bgColor="rgb("+ x +"," + y + "," + z +")";
+  
+
 
 
 }
