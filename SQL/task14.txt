@@ -1,0 +1,30 @@
+-- create a table
+CREATE TABLE Orders(
+  
+  OrderID INTEGER ,
+  CustomerID TEXT ,
+  OrderDate INTEGER
+);
+-- insert some values
+INSERT INTO Orders VALUES (10308, '3', '1996-09-18');
+INSERT INTO Orders VALUES (10309, '2', '1996-09-19');
+INSERT INTO Orders VALUES (10310, '1', '1996-09-20');
+
+-- create a table
+CREATE TABLE Customers(
+  CustomerID INTEGER,
+  CustomerName TEXT,
+  ContactName TEXT,
+  Country Text
+);
+-- insert some values
+INSERT INTO Customers VALUES (1, 'Alfreds Futterkiste', 'Maria Anders','Germany');
+INSERT INTO Customers VALUES (2, 'Ana Trujillo Emparedados y helados', 'Antonio Moreno','Mexico');
+INSERT INTO Customers VALUES (3, 'Antonio Moreno Taquería', 'Antonio Moreno','Mexico');
+
+
+
+-- fetch some values
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate, Customers.Country
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;

@@ -1,0 +1,64 @@
+-- create a table
+CREATE TABLE WF(
+  name TEXT,
+  continent TEXT,
+  country TEXT,
+  rating INTEGER
+);
+-- insert some values
+INSERT INTO WF VALUES ('Beshbarmak','Asia', 'Kazakhstan','7');
+INSERT INTO WF VALUES ('Paloo', 'Asia','Kyrgyzstan','6');
+INSERT INTO WF VALUES ('Mante','Asia', 'Tajikistan','8');
+INSERT INTO WF VALUES ('Lagman','Asia','Uzbekistan ','9');
+INSERT INTO WF VALUES ('Chal', 'Asia','Turkmenistan','0');
+INSERT INTO WF VALUES ('Dovga', 'Europe','Azerbaijan','4');
+INSERT INTO WF VALUES ('Khachapuri','Europe','Georgia','8');
+INSERT INTO WF VALUES ('Soup Udon🍜','Asia','Japan','9');
+INSERT INTO WF VALUES ('Sushi🍣','Asia','Japan','10');
+INSERT INTO WF VALUES ('Tempura🍤','Asia','Japan','10');
+INSERT INTO WF VALUES ('Sashimi🦪','Asia','Japan','9');
+INSERT INTO WF VALUES ('Miso Soup🍲','Asia','Japan','10');
+INSERT INTO WF VALUES ('Pizza🍕','Europe','Italy','8');
+INSERT INTO WF VALUES ('Carbonara🍝','Europe','Italy','9');
+INSERT INTO WF VALUES ('Lasagne🥧','Europe','Italy','9');
+INSERT INTO WF VALUES ('Tiramisu🍰','Europe','Italy','10');
+INSERT INTO WF VALUES ('Ravioli🥟','Europe','Italy','8');
+INSERT INTO WF VALUES ('Shrimp Dumplings🥟','Asia','Hong Kong','8');
+INSERT INTO WF VALUES ('Siu Mai🧆','Asia','Hong Kong','9');
+INSERT INTO WF VALUES ('Barbecued Pork Bun🍥','Asia','Hong Kong','7');
+INSERT INTO WF VALUES ('Spring Rolls','Asia','Hong Kong','9');
+INSERT INTO WF VALUES ('Chicken feet with rice🍛','Asia','Hong Kong','9');
+INSERT INTO WF VALUES ('Congee with preserved egg and meat🥣','Asia','Hong Kong','7');
+INSERT INTO WF VALUES ('French Onion Soup🥘','Europe','France','10');
+INSERT INTO WF VALUES ('Croissants🥐','Europe','France','10');
+INSERT INTO WF VALUES ('Bauguette🥖','Europe','France','8');
+INSERT INTO WF VALUES ('Macaron🍪','Europe','France','10');
+INSERT INTO WF VALUES ('confit de canard🍗','Europe','France','8');
+INSERT INTO WF VALUES ('Hot Dog🌭','North America','USA','9');
+INSERT INTO WF VALUES ('Burger🍔','North America','USA','9');
+INSERT INTO WF VALUES ('Buffalo wings🥠','North America','USA','8');
+INSERT INTO WF VALUES ('French Fries🍟','North America','USA','10');
+INSERT INTO WF VALUES ('Chocolate🍫','Europe','Belgium','10');
+INSERT INTO WF VALUES ('Waffle🧇','Europe','Belgium','10');
+INSERT INTO WF VALUES ('Moules frites🍟🐚','Europe','Belgium','8');
+INSERT INTO WF VALUES ('Steak tartare🥩🥚','Europe','Belgium','8');
+INSERT INTO WF VALUES ('Nidi di rondine🥧','Europe','San Marino ','9');
+INSERT INTO WF VALUES ('Soppa tal-armla🍲','Europe','Malta ','5');
+INSERT INTO WF VALUES ('Makaronia tou fournou🥧','Europe','Cyprus ','7');
+INSERT INTO WF VALUES ('İskender🧆','Europe','Turkey ','6');
+INSERT INTO WF VALUES ('Rosti','Europe','Switzerland ','10');
+INSERT INTO WF VALUES ('Saltfish','North America','Saint Kitts and Nevis ','6');
+
+
+-- fetch some values
+SELECT COUNT(rating)
+FROM  WF
+WHERE rating='10';
+SELECT AVG(rating)
+FROM  WF
+WHERE rating='10';
+SELECT SUM(rating)
+FROM  WF;
+
+
+

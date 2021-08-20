@@ -1,0 +1,60 @@
+-- create a table
+CREATE TABLE WF(
+  name TEXT,
+  country TEXT,
+  rating INTEGER
+);
+-- insert some values
+INSERT INTO WF VALUES ('Beshbarmak', 'Kazakhstan','7');
+INSERT INTO WF VALUES ('Paloo', 'Kyrgyzstan','6');
+INSERT INTO WF VALUES ('Mante', 'Tajikistan','8');
+INSERT INTO WF VALUES ('Lagman','Uzbekistan ','9');
+INSERT INTO WF VALUES ('Chal', 'Turkmenistan','0');
+INSERT INTO WF VALUES ('Dovga', 'Azerbaijan','4');
+INSERT INTO WF VALUES ('Khachapuri','Georgia','8');
+INSERT INTO WF VALUES ('Soup Udon🍜','Japan','9');
+INSERT INTO WF VALUES ('Sushi🍣','Japan','10');
+INSERT INTO WF VALUES ('Tempura🍤','Japan','10');
+INSERT INTO WF VALUES ('Sashimi🦪','Japan','9');
+INSERT INTO WF VALUES ('Miso Soup🍲','Japan','10');
+INSERT INTO WF VALUES ('Pizza🍕','Italy','8');
+INSERT INTO WF VALUES ('Carbonara🍝','Italy','8');
+INSERT INTO WF VALUES ('Lasagne🥧','Italy','8');
+INSERT INTO WF VALUES ('Tiramisu🍰','Italy','10');
+INSERT INTO WF VALUES ('Ravioli🥟','Italy','8');
+INSERT INTO WF VALUES ('Shrimp Dumplings🥟','Hong Kong','8');
+INSERT INTO WF VALUES ('Siu Mai🧆','Hong Kong','9');
+INSERT INTO WF VALUES ('Barbecued Pork Bun🍥','Hong Kong','7');
+INSERT INTO WF VALUES ('Spring Rolls','Hong Kong','9');
+INSERT INTO WF VALUES ('Chicken feet with rice🍛','Hong Kong','9');
+INSERT INTO WF VALUES ('Congee with preserved egg and meat🥣','Hong Kong','7');
+INSERT INTO WF VALUES ('French Onion Soup🥘','France','10');
+INSERT INTO WF VALUES ('Croissants🥐','France','10');
+INSERT INTO WF VALUES ('Bauguette🥖','France','8');
+INSERT INTO WF VALUES ('Macaron🍪','France','10');
+INSERT INTO WF VALUES ('confit de canard🍗','France','8');
+INSERT INTO WF VALUES ('Hot Dog🌭','America','9');
+INSERT INTO WF VALUES ('Burger🍔','America','9');
+INSERT INTO WF VALUES ('Buffalo wings🥠','America','8');
+INSERT INTO WF VALUES ('French Fries🍟','America','10');
+INSERT INTO WF VALUES ('Chocolate🍫','Belgium','10');
+INSERT INTO WF VALUES ('Waffle🧇','Belgium','10');
+INSERT INTO WF VALUES ('Moules frites🍟🐚','Belgium','8');
+INSERT INTO WF VALUES ('Steak tartare🥩🥚','Belgium','8');
+INSERT INTO WF VALUES ('Nidi di rondine)','San Marino','7');
+INSERT INTO WF VALUES ('Soppa tal-armla)','Malta','4');
+INSERT INTO WF VALUES ('Makaronia tou fournou)','Cyprus','6');
+INSERT INTO WF VALUES ('İskender)','Turkey','7');
+INSERT INTO WF VALUES ('Rosti)','Saint Vincent and Grenadines','9');
+INSERT INTO WF VALUES ('Roasted Breadfruit)','Saint Vincent and Grenadines ','5');
+INSERT INTO WF VALUES ('Mango in Sauce)','Saint Lucia ','6');
+INSERT INTO WF VALUES ('Fungee and Pepperpot)','Antigua and Barbuda ','3');
+
+
+
+
+
+
+-- fetch some values
+Select DISTINCT country from WF;
+ 
