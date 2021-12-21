@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Random Item</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Images/random.png" type="image/png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Twinkle+Star&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+<style>
+
+  body{
+    background-color:#DBE8E6;
+    font-family: 'Twinkle Star', cursive;
+    padding-top: 200px;
+    color: #649B93;
+    text-align: center;
+  }
+
+  button{
+  width: 100px;
+  height: 80px;   
+  background-color: #89B3AC; 
+  border: none;
+  color: white;
+  border-radius: 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="container">
+  <img src="Images/icon_ran.gif"alt="Image"width="100px"><br><br>
+  <div id="display">
+    Let's Go!
+  </div>
+  <div id="buttons">
+    <button id="startStop" onclick="startStop();">Click Me To Generate A Random Food!</button>
+   
+  </div>
+</div>
+<audio loop id="myAudio">
+    <source id="myAudio" src="Music/RIREC.wav" type="audio/wav">
+    Your browser does not support the audio element.
+
+<script type="text/javascript"> 
+let status = 'stopped' ;
+const food=["Pineapple Buns" , "Rice Rolls" , "Milk Tea" , "Tofu Dessert" , "Dim Sum" , "Egg Tarts" , "Wonton Noodles" , "Siu Mei" , "Egg Puffs" , "Curry Fish Balls" , "Beef Brisket Noodles" , "Fresh Seafood" , "French Toast" , "Claypot Rice" , "Hot Pot" , "Mango Pomelo Dessert" , "Fried Beef Noodles" , "Roasted Chestnuts" , "Sweet and Sour Pork"                        ]
+
+function stopWatch(){
+  let randomIndex=Math.floor(Math.random()*food.length); 
+  document.getElementById("display").innerHTML = ("value",food[randomIndex]);
+}
+
+
+function startStop(){
+  if (status === "stopped"){
+
+    interval = window.setInterval(stopWatch,0);
+    document.getElementById("startStop").innerHTML = "Stop Generating";
+    playAudio();
+    status = "started";
+}
+
+else{
+
+  window.clearInterval(interval);
+  document.getElementById("startStop").innerHTML = "Start Again";
+  pauseAudio();
+  status = "stopped";
+    }
+}
+function playAudio(){
+  var a = document.getElementById("myAudio");
+      a.play();
+    }
+function pauseAudio(){
+
+  var a = document.getElementById("myAudio");
+      a.pause()
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
