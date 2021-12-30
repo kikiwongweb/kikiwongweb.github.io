@@ -38,7 +38,41 @@
   font-family: 'Quicksand', sans-serif;
   margin-top: 20px;
 
+
+
   }
+
+  a{
+            padding: 100% 10px 100% 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, -50%);
+            color:#000000 ;
+            text-decoration: none;
+          }
+
+
+
+         
+
+          #next{
+            position: absolute;
+            top: 50%;
+            right: 0px;
+          }
+
+          #back{
+            position: absolute;
+            top: 50%;
+            left: 0px;
+
+          }
+
+        
+
+         
+          a:hover {
+            background-color: #FEFBFC;
+          }
 
 </style>
 </head>
@@ -55,7 +89,7 @@
   </div>
 </div>
 <audio loop id="myAudio">
-    <source id="myAudio" src="Music/RIREC.wav" type="audio/wav">
+    <source id="myAudio" src="Music/RIREC.wav" type="audio/wav"></audio>
     Your browser does not support the audio element.
 
 <script type="text/javascript"> 
@@ -97,13 +131,15 @@ function pauseAudio(){
 
 </script>
 
+<div> <div id="div2"> <div id="div3"> <div id="div4"> </div> </div> </div> </div> 
 
 
 
 
 
-
-
+<a id="back" href="Animals.html">⬅</a> 
+<a id="next" href="ani.html">➡</a>
 
 
 </body>
+</html>
