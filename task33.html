@@ -8,6 +8,40 @@ canvas {
    border:1px solid lightpink;
    background-color: lightpink;
 }
+
+
+a{
+            padding: 100% 10px 100% 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, -50%);
+            color:#000000 ;
+            text-decoration: none;
+          }
+
+
+
+         
+
+          #next{
+            position: absolute;
+            top: 50%;
+            right: 0px;
+          }
+
+          #back{
+            position: absolute;
+            top: 50%;
+            left: 0px;
+
+          }
+
+        
+
+         
+          a:hover {
+            background-color: #FEFBFC;
+          }
+
 </style>
 </head>
 <body onload="startGame()">
@@ -113,5 +147,9 @@ function movedownright() {
 </div>
 
 <p>If you click a button the purple square will start moving. Click the same button many times, and it will move faster and faster.</p>
+
+<a id="back" href="task32.html">Back</a> 
+<a id="next" href="task34.html">Next</a>
+
 </body>
 </html>
