@@ -6,9 +6,16 @@
   <title>Animation</title>
   <meta name="generator" content="Google Web Designer 8.0.3.0603">
   <style type="text/css" id="gwd-text-style">
+   div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+   }
+
    html{
     text-align: center;
-    padding-top: 200px;
    }
 
     p {
@@ -25,25 +32,21 @@
     }
   </style>
   <style type="text/css">
-    html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0px;
-    }
+ 
     body {
-      background-color: transparent;
-      transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-      transform-style: preserve-3d;
+      background-color: aquamarine;
+     
+    
     }
     .gwd-rect-9lkz {
-      position: absolute;
+      position: relative;
       width: 138px;
       height: 138px;
       box-sizing: border-box;
       border-width: 1px;
       border-style: solid;
-      left: 197px;
-      top: 121px;
+      left: 50%;
+      top: 50%;
       border-image-source: none;
       border-image-width: 1;
       border-image-outset: 0;
@@ -88,7 +91,7 @@
       animation: 3s linear 0s 1 normal forwards running gwd-gen-cenagwdanimation_gwd-keyframes;
     }
     .gwd-rect-1a62 {
-      position: absolute;
+      position: relative;
       width: 80px;
       height: 50px;
       left: 104px;
@@ -133,7 +136,7 @@
       animation: 3s linear 0s 1 normal forwards running gwd-gen-1v37gwdanimation_gwd-keyframes;
     }
     .gwd-rect-uuzu {
-      position: absolute;
+      position: relative;
       width: 60.5px;
       height: 76px;
       left: 150px;
@@ -181,10 +184,11 @@
 </head>
 
 <body class="htmlNoPages">
+  <div>
   <svg data-gwd-shape="rectangle" class="gwd-rect-9lkz gwd-gen-cenagwdanimation"></svg>
   <svg data-gwd-shape="rectangle" class="gwd-rect-1a62 gwd-gen-1v37gwdanimation"></svg>
   <svg data-gwd-shape="rectangle" class="gwd-rect-uuzu gwd-gen-g0tlgwdanimation"></svg>
-
+</div>
   <a href="task13.html">Back</a>
   <a href="task15.html">Next</a>
 </body>
