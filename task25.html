@@ -8,6 +8,39 @@ left: 50%;
 transform: translate(-50%, -50%);
 position: absolute;
   }
+
+  #next,#back{
+            padding: 100% 10px 100% 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, -50%);
+            color:#000000 ;
+            text-decoration: none;
+          }
+
+
+
+         
+
+          #next{
+            position: absolute;
+            top: 50%;
+            right: 0px;
+          }
+
+          #back{
+            position: absolute;
+            top: 50%;
+            left: 0px;
+
+          }
+
+        
+
+         
+          a:hover {
+            background-color: #FEFBFC;
+          }
+
 </style>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <body>
@@ -38,6 +71,8 @@ var layout = {
 // Display using Plotly
 Plotly.newPlot("myPlot", data, layout);
 </script>
+<a id="back" href="task24.html">Back</a>  
 
+<a id="next" href="task26.html">Next</a> 
 </body>
 </html>
