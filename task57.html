@@ -38,6 +38,40 @@
 .wait {cursor: wait;}
 .zoom-in {cursor: zoom-in;}
 .zoom-out {cursor: zoom-out;}
+
+
+#next,#back{
+            padding: 100% 10px 100% 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, -50%);
+            color:#000000 ;
+            text-decoration: none;
+          }
+
+
+
+         
+
+          #next{
+            position: absolute;
+            top: 50%;
+            right: 0px;
+          }
+
+          #back{
+            position: absolute;
+            top: 50%;
+            left: 0px;
+
+          }
+
+        
+
+         
+          a:hover {
+            background-color: #FEFBFC;
+          }
+
 </style>
 </head>
 <body>
@@ -82,5 +116,8 @@
 <p class="zoom-in">zoom-in</p>
 <p class="zoom-out">zoom-out</p>
 
+<a id="back" href="task56.html">Back</a>  
+
+<a id="next" href="task58.html">Next</a> 
 </body>
 </html>

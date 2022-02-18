@@ -38,6 +38,38 @@
  bottom: 30px;
  font-size: 17px;
 }
+#next,#back{
+            padding: 100% 10px 100% 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, -50%);
+            color:#000000 ;
+            text-decoration: none;
+          }
+
+
+
+         
+
+          #next{
+            position: absolute;
+            top: 50%;
+            right: 0px;
+          }
+
+          #back{
+            position: absolute;
+            top: 50%;
+            left: 0px;
+
+          }
+
+        
+
+         
+          a:hover {
+            background-color: #FEFBFC;
+          }
+
 
 #snackbar.show {
  visibility: visible;
@@ -131,8 +163,10 @@ function snackbar1 () {
  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
 </script>
+<a id="back" href="task61.html">Back</a>  
 
+<a id="next" href="task63.html">Next</a> 
 </body>
 <a id="back" href="task60.html">Back</a>  
- <a id="next" href="`task63.html">Next</a>  
+ <a id="next" href="task63.html">Next</a>  
 </html>
