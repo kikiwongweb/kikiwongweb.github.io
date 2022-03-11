@@ -6,15 +6,21 @@
 			background-image:url(https://wallpaperaccess.com/full/188825.jpg);
 			background-repeat: no-repeat;
 			background-size:cover;
-			color: white;
-			font-size: 50px;
-			text-align: center;
-			padding-top: 200px;
+			
 					}
+         
+    #content{
+      text-align: center;
+      color: white;
+      font-size: 50px;
+      text-align: center;
+      padding-top: 200px;
+      padding-left:100px ;
+      padding-right: 100px;
+          }
 
-
-a{
-            padding: 100% 10px 100% 10px;
+#next,#back{
+            padding: 300px 10px 300px 10px;
             background-color:#AFB4E0 ;
             transform: translate(0%, -50%);
             color:#000000 ;
@@ -45,15 +51,48 @@ a{
             background-color: #FEFBFC;
           }
 
+ #next2{
+            position: absolute;
+            top: 0%;
+            right: 0px;
+            border-bottom-left-radius: 5px ;
+          }
 
+          #back2{
+            position: absolute;
+            top:  0%;
+            left: 0px;
+            border-bottom-right-radius: 5px;
+
+          }
+
+        
+
+  #next2,#back2{
+     padding: 7px 10px 7px 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, 0%);
+            color:#000000 ;
+            text-decoration: none;
+            display: none;
+          }
+
+  @media only screen and (max-width: 600px) {
+#next2,#back2{
+   display: block;
+          }        
+
+#next,#back{
+        display: none;
+      }
 	</style>
-
+<div id="content">
 <p>Try to click the button to know how big was your screen</p>
 
 <button onclick="myFunction()">Try it</button>
 
 <p id="demo"></p>
-
+</div>
 <script>
 function myFunction() {
  var x = "Total Width: " + screen.width + "px";
