@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
-<style>#next,#back{
+<style>
+#txt{
+  position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+      }
+  #next,#back{
             padding: 100% 10px 100% 10px;
             background-color:#AFB4E0 ;
             transform: translate(0%, -50%);
@@ -66,9 +73,13 @@
 #next,#back{
         display: none;
       }
+
+
+
+
 </style>
 <body>
-    <header>
+   <div id="txt"> <header>
         <h1>Range demo</h1>
         <p>Demo showing range type on input element</p>
     </header>
@@ -83,6 +94,7 @@
     Range example 2
     <input id="example2" type="range" min="0" max="100000" step="10" onchange="textbox2.value = example2.value" />
     <input id="textbox2" type="text" />
+  </div>
 
 <a id="back" href="task55.html">Back</a>  
 

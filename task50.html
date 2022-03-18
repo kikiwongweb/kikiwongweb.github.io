@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Scrolling Bar</title>
 <body>
 <style >
 
@@ -13,6 +15,18 @@
             color:#000000 ;
             text-decoration: none;
 
+          }
+
+
+
+         
+
+  #next,#back{
+            padding: 100% 10px 100% 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, -50%);
+            color:#000000 ;
+            text-decoration: none;
           }
 
 
@@ -37,7 +51,8 @@
          
           a:hover {
             background-color: #FEFBFC;
-          } #next2{
+          }
+           #next2{
             position: absolute;
             top: 0%;
             right: 0px;
@@ -51,7 +66,6 @@
             border-bottom-right-radius: 5px;
 
           }
-  }
 
         
 
@@ -72,6 +86,7 @@
 #next,#back{
         display: none;
       }
+
 </style>
 
 <input type=range id="mySelect" onchange="myFunction()">
