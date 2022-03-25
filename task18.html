@@ -23,8 +23,27 @@ html{
 }
 
          
+
+
+.glow {
+font-size: 80px;
+color: #ffffff;
+text-align: center;
+animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+from {
+text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #B9E8FF, 0 0 40px #B9E8FF, 0 0 50px #B9E8FF, 0 0 60px #B9E8FF, 0 0 70px #B9E8FF;
+}
+
+to {
+text-shadow: 0 0 20px #fff, 0 0 30px #FF0F00, 0 0 40px #FF7E00, 0 0 50px #F0FF00, 0 0 60px #00B04A, 0 0 70px #0061FF, 0 0 80px #D400FF;
+}
+}
+
 #next,#back{
-            padding: 100% 10px 100% 10px;
+            padding: 7px 10px 7px 10px;
             background-color:#AFB4E0 ;
             transform: translate(0%, -50%);
             color:#000000 ;
@@ -55,24 +74,41 @@ html{
             background-color: #FEFBFC;
           }
 
-          
+         
+  #next2{
+            position: absolute;
+            top: 0%;
+            right: 0px;
+            border-bottom-left-radius: 5px ;
+          }
 
-.glow {
-font-size: 80px;
-color: #ffffff;
-text-align: center;
-animation: glow 1s ease-in-out infinite alternate;
-}
+          #back2{
+            position: absolute;
+            top:  0%;
+            left: 0px;
+            border-bottom-right-radius: 5px;
 
-@-webkit-keyframes glow {
-from {
-text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #B9E8FF, 0 0 40px #B9E8FF, 0 0 50px #B9E8FF, 0 0 60px #B9E8FF, 0 0 70px #B9E8FF;
-}
+          }
 
-to {
-text-shadow: 0 0 20px #fff, 0 0 30px #FF0F00, 0 0 40px #FF7E00, 0 0 50px #F0FF00, 0 0 60px #00B04A, 0 0 70px #0061FF, 0 0 80px #D400FF;
-}
-}
+        
+
+  #next2,#back2{
+     padding: 7px 10px 7px 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, 0%);
+            color:#000000 ;
+            text-decoration: none;
+            display: none;
+          }
+
+  @media only screen and (max-width: 600px) {
+#next2,#back2{
+   display: block;
+          }        
+
+#next,#back{
+        display: none;
+      }
 </style>
 </head>
 <body>
