@@ -15,6 +15,11 @@
 </head>
 <body>
     <style>
+#display{
+    font-size: 50px;
+}
+
+
         button{
     text-decoration: none;
     font-family: 'Kumbh Sans', sans-serif;
@@ -36,6 +41,14 @@
 html{
     text-align: center;
     background-color: #33CAFF;
+}
+
+
+.container{   
+position:absolute;
+top :50%;
+left :50%;
+transform :translate(-50%, -50%);
 }
 
 #next,#back{
@@ -118,6 +131,8 @@ html{
             <button id="startStop" onclick="startStop()">點擊我進行抽獎</button> 
 
     </div>
+</div>
+
     <a id="back" href="task23.html">Back</a>  
 
 <a id="next" href="task25.html">Next</a> 

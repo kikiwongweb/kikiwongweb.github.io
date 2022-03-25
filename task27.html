@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
-<title>PRANK YOUR COMPUTER BUT NOT YOU😜</title>
+<title>(｡･∀･)ﾉﾞ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 #container {
  width: 400px;
  height: 400px;
- position: relative;
+ position: absolute;
  background: blue;
   left: 50%;
-  margin-left: -200px;
   top: 50%;
-  margin-top: 60px;
+  transform: translate(-50%, -50%);
 }
 #animate {
  width: 50px;
@@ -35,25 +34,28 @@ html{
 
 }
 
+#btn{
+ background-color:#DBBDDC;
+  border-radius: 10px;
+  height: 60px;
+  outline: none;
+  color: white;
+  width: 100px;
+  text-decoration: none;
+  border: none;
+  left: 30%;
+  top: 30%;
+
+}
+#btn:hover{
+  background-color: #E9E2FF;
+}
 
 
 
-button{
-	background-color:purple;
-	border-radius: 10px;
-	height: 60px;
-	outline: none;
-	color: white;
-	width: 100px;
-	text-decoration: none;
-	border: none;
-}
-button:hover{
-	background-color: blue;
-}
-}
+
 #next,#back{
-            padding: 100% 10px 100% 10px;
+            padding:  100% 10px 100% 10px;
             background-color:#AFB4E0 ;
             transform: translate(0%, -50%);
             color:#000000 ;
@@ -83,7 +85,6 @@ button:hover{
           a:hover {
             background-color: #FEFBFC;
           }
-
  #next2{
             position: absolute;
             top: 0%;
@@ -118,14 +119,16 @@ button:hover{
 #next,#back{
         display: none;
       }
+
 </style>
 <body>
 
-<p><button onclick="myMove()">CLICK ME x2 </button></p>
 
 <div id ="container">
- <div id ="animate"></div>
- <div id ="animate2"></div>
+<button id="btn" onclick="myMove()">Click me now ✪ ω ✪ </button>
+
+<div id ="animate"></div>
+<div id ="animate2"></div>
 
 </div>
 
