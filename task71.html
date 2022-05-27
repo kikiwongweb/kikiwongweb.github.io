@@ -6,6 +6,12 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
 	<title>JavaScript Geolocation</title>
 </head>
 <style type="text/css">
@@ -17,15 +23,57 @@
 		font-size: 25px;
 	}
 
+	html:hover{
+		background-color: #92C7C4;
+	}
+
 	button{
 	background-color: #FFCADE;
+	 width: 100px;
+  	 height: 50px;   
+  	 border-radius: 10px;
+  	 font-family: 'Bubblegum Sans', cursive;
+  	 font-size: 25px;
+	}
+
+	button:hover{
+		background-color:#E6B6FF ;
+	}
+
+	.h2:hover{
+		color: #FF8393;
+		background-color: yellow;
+	}
+
+	.p:hover{
+		color:#FF8393 ;
+		background-color: yellow;
 	}
 </style>
 <body>
-
+<div class="h2"> 
 <h2>JavaScript Geolocation</h2>
-<p>Click the button to get your corrdinates.</p>
-
+</div>
+<div class="p">
+<p>Click the button to get your coordinates.</p>
+</div>
 <button onclick="getLocation()">Try it </button>
+<p id="demo"> </p>
+
+
+<script>
+	const x = document.getElementById("demo");
+
+	function getLocation() {
+		try {
+			navigator.geolocation.getCurrentPosition(showPosition);} catch {
+				x.innerHTML = err;
+			}
+		}
+
+		function showPosition(position){
+			x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude:" + position.coords.longitude;
+		}
+</script>
 </body>
 </html>
