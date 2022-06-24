@@ -1,130 +1,243 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SVG</title>
-	<style type="text/css">
-		.star-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>cgdraw</title>  
+  <script src="https://unpkg.com/interactjs@1.3.0/dist/interact.js"></script>
+<style type="text/css">
+html{ 
   text-align: center;
-  height: 100%;
+  padding-top: 200px; 
 }
-#star-demo {
-  display: block;
-  flex-grow: 1;
-  touch-action: none;
-  max-height: 100vw;
-  max-width: 100vw;
+
+polygon{
+   
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+
+
 }
-</style>
+  #next,#back{
+            padding: 100% 10px 100% 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, -50%);
+            color:#000000 ;
+            text-decoration: none;
+          }
+
+
+
+         
+
+          #next{
+            position: absolute;
+            top: 50%;
+            right: 0px;
+          }
+
+          #back{
+            position: absolute;
+            top: 50%;
+            left: 0px;
+
+          }
+
+        
+
+         
+          a:hover {
+            background-color: #FEFBFC;
+          }
+
+           #next2{
+            position: absolute;
+            top: 0%;
+            right: 0px;
+            border-bottom-left-radius: 5px ;
+          }
+
+          #back2{
+            position: absolute;
+            top:  0%;
+            left: 0px;
+            border-bottom-right-radius: 5px;
+
+          }
+
+        
+
+  #next2,#back2{
+     padding: 7px 10px 7px 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, 0%);
+            color:#000000 ;
+            text-decoration: none;
+            display: none;
+          }
+
+  @media only screen and (max-width: 600px) {
+#next2,#back2{
+   display: block;
+          }        
+
+#next,#back{
+        display: none;
+      }
+        </style>
+
 </head>
 <body>
-<div class="star-wrapper">
-  <object id="star-demo" type="image/svg+xml" data="Images/star.svg" width="250px" alt="embedded svg"></object>
 
-  <p style="padding: 0 5%">
-    The <a href="https://github.com/taye/interact.js/blob/master/examples/star/star.svg?short_path=e1e0fe0">star.svg</a>
-    file references interact.js as well as
-    <a href="https://github.com/taye/interact.js/blob/master/examples/star/index.js"> another script</a>
-    to enable and respond to drag events.
+
+<svg id="mysvg" version="1.2"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="100%" height="500" style="border:1px ; ">
+   </div> 
+     <defs>
+         <circle id="point-handle"
+             r="10" x="0" y="0"
+             stroke-width="4"
+             fill="#fff"
+             fill-opacity="0.4"
+             stroke="#fff"/>
+     </defs>
+   
+     <polygon id="edit-star"
+       stroke="#29e"
+       stroke-width="20"
+       stroke-linejoin="round"
+       fill="none"
+         points="760.86,219.78 797.81,334.62 700,264 602.19,334.62 619.13,219.78 541.74,148.58 662.38,148.22 700,33.6 737.62,148.22 858.25,148.58"/>
+</svg>
+</polygon>
+<h4 id="coord">SVG MAP Browser Coordinates</h4>
+<p>Using <a href="http://interactjs.io/">InteractJS</a> to handle drag of elements. 
+  <span id='infoMove'></span>    
   </p>
-</div>
-
-	<script type="module">
-	
-	
-import interact from 
-'https://cdn.interactjs.io/v1.10.13/interactjs/index.js'
-
-interact('.item').draggable({
-  listeners: {
-    move (event) {
-      console.log(event.pageX,
-                  event.pageY)
+<script>
+  // wait for external resources to load if any
+  window.addEventListener('load', () => {    
+     }) // end of window.load
+   const getPosXY = (event) => {      
+      let rect = event.target.getBoundingClientRect()
+      let x = event.offsetX || event.pageX - rect.left - window.scrollX
+      let y = event.offsetY || event.pageY - rect.top - window.scrollY
+      return [x, y]
     }
-  }
-})
-</script>
-
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', () => {
-  const sns = 'http://www.w3.org/2000/svg'
-  const xns = 'http://www.w3.org/1999/xlink'
-  const root = document.getElementById('svg-edit-demo')
-  const star = document.getElementById('edit-star')
-  let rootMatrix
-  const originalPoints = []
-  let transformedPoints = []
-
-  for (let i = 0, len = star.points.numberOfItems; i < len; i++) {
-    const handle = document.createElementNS(sns, 'use')
-    const point = star.points.getItem(i)
-    const newPoint = root.createSVGPoint()
-
-    handle.setAttributeNS(xns, 'href', '#point-handle')
-    handle.setAttribute('class', 'point-handle')
-
-    handle.x.baseVal.value = newPoint.x = point.x
-    handle.y.baseVal.value = newPoint.y = point.y
-
-    handle.setAttribute('data-index', i)
-
-    originalPoints.push(newPoint)
-
-    root.appendChild(handle)
-  }
-
-  function applyTransforms (event) {
-    rootMatrix = root.getScreenCTM()
-
-    transformedPoints = originalPoints.map((point) => {
-      return point.matrixTransform(rootMatrix)
+    const getEl = (id) => document.getElementById(id)
+    const sns="http://www.w3.org/2000/svg"
+    const xns="http://www.w3.org/1999/xlink"
+    const root = getEl('mysvg')
+    const star = getEl('edit-star')
+    const coord = getEl('coord')    
+    var rootMatrix
+    var originalPoints = []
+    var transformedPoints = []
+    root.addEventListener('mousemove', (event) => {
+      let [x, y] = getPosXY(event)
+      coord.innerText = `x,y = ${x},${y}`
     })
+    // BEGIN SECTION CODE TO DRAG POINTS OF THE STAR POLYGON
+    for (let i = 0, len = star.points.numberOfItems; i < len; i++) {
+        let handle = document.createElementNS(sns, 'use')
+        let point = star.points.getItem(i)
+        let newPoint = root.createSVGPoint()
 
-    interact('.point-handle').draggable({
-      snap: {
-        targets: transformedPoints,
-        range: 20 * Math.max(rootMatrix.a, rootMatrix.d),
-      },
-    })
-  }
+        handle.setAttributeNS(xns, 'href', '#point-handle')
+        handle.setAttribute('class', 'point-handle')
 
-  interact(root).on('mousedown', applyTransforms).on('touchstart', applyTransforms)
+        handle.x.baseVal.value = newPoint.x = point.x
+        handle.y.baseVal.value = newPoint.y = point.y
 
-  interact('.point-handle')
+        handle.setAttribute('data-index', i)
+
+        originalPoints.push(newPoint)
+        root.appendChild(handle)
+    }
+
+    function applyTransforms (event) {
+        rootMatrix = root.getScreenCTM()
+        transformedPoints = originalPoints.map( (point) => point.matrixTransform(rootMatrix))        
+
+        interact('.point-handle').draggable({
+            snap: {
+                targets: transformedPoints,
+                range: 20 * Math.max(rootMatrix.a, rootMatrix.d)
+            }
+        });
+    }
+
+    interact(root)
+        .on('mousedown', applyTransforms)
+        .on('touchstart', applyTransforms);
+
+    interact('.point-handle')
+        .draggable({
+            onstart: (event) => root.setAttribute('class', 'dragging'),
+            onmove: function (event) {
+                let i = event.target.getAttribute('data-index')|0
+                let point = star.points.getItem(i)
+                
+                point.x += event.dx / rootMatrix.a
+                point.y += event.dy / rootMatrix.d
+
+                event.target.x.baseVal.value = point.x;
+                event.target.y.baseVal.value = point.y;
+            },
+            onend: (event) => root.setAttribute('class', ''),
+            snap: {
+                targets: originalPoints,
+                range: 10,
+                relativePoints: [ { x: 0.5, y: 0.5 } ]
+            },
+            restrict: { restriction: document.rootElement }
+        })
+        .styleCursor(false);
+
+    document.addEventListener('dragstart', (event) =>  event.preventDefault())      
+    // END SECTION CODE TO DRAG POINTS OF STAR  
+    interact('.godragit')
     .draggable({
-      onstart: function (event) {
-        root.setAttribute('class', 'dragging')
-      },
-      onmove: function (event) {
-        const i = event.target.getAttribute('data-index') | 0
-        const point = star.points.getItem(i)
+        // enable inertial throwing
+        inertia: true,
+        // keep the element within the area of it's parent
+        restrict: {
+          restriction: "parent",
+          endOnly: true,
+          elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+        },
+        // enable autoScroll
+        autoScroll: true,
 
-        point.x += event.dx / rootMatrix.a
-        point.y += event.dy / rootMatrix.d
+        // call this function on every dragmove event
+        onmove: dragMoveListener,
+        // call this function on every dragend event
+        onend: (event) => {
+          let info = getEl('infoMove')
+          let distance = (Math.sqrt(Math.pow(event.pageX - event.x0, 2) + Math.pow(event.pageY - event.y0, 2) | 0)).toFixed(2)
+          console .log(`moved a distance of ${distance} px`)
+          info.innerText = `moved a distance of ${distance} px`
+        }
+      });
+      function dragMoveListener (event) {
+        var target = event.target,
+            // keep the dragged position in the data-x/data-y attributes
+            x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+            y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-        event.target.x.baseVal.value = point.x
-        event.target.y.baseVal.value = point.y
-      },
-      onend: function (event) {
-        root.setAttribute('class', '')
-      },
-      snap: {
-        targets: originalPoints,
-        range: 10,
-        relativePoints: [{ x: 0.5, y: 0.5 }],
-      },
-      restrict: { restriction: document.rootElement },
-    })
-    .styleCursor(false)
+        // translate the element
+        target.style.webkitTransform =
+        target.style.transform =
+          'translate(' + x + 'px, ' + y + 'px)';
 
-  document.addEventListener('dragstart', (event) => {
-    event.preventDefault()
-  })
-})
+        // update the posiion attributes
+        target.setAttribute('data-x', x);
+        target.setAttribute('data-y', y);
+      }
 </script>
 </body>
 </html>
