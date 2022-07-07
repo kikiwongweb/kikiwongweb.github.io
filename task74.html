@@ -1,25 +1,161 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>cgdraw</title>  
-  <script src="https://unpkg.com/interactjs@1.3.0/dist/interact.js"></script>
-<style type="text/css">
-html{ 
-  text-align: center;
-  padding-top: 200px; 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clock</title>
+	<style type="text/css">
+		* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--hue: 223;
+	--bg: hsl(var(--hue),90%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--primary: hsl(var(--hue),90%,55%);
+	--trans-dur: 0.3s;
+	font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
+}
+body {
+	background-color: var(--bg);
+	color: var(--fg);
+	font: 1em/1.5 "DM Sans", sans-serif;
+	height: 100vh;
+	display: grid;
+	place-items: center;
+	transition:
+		background-color var(--trans-dur),
+		color var(--trans-dur);
 }
 
-polygon{
-  position: absolute;
-left: -50%;
-right: 0;
-text-align: center;
-
+.clock {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.clock__block {
+	background-color: hsl(var(--hue),10%,90%);
+	border-radius: 0.5rem;
+	box-shadow: 0 1rem 2rem hsla(var(--hue),90%,50%,0.3);
+	font-size: 3em;
+	line-height: 2;
+	margin: 0.75rem;
+	overflow: hidden;
+	text-align: center;
+	width: 6rem;
+	height: 6rem;
+	transition:
+		background-color var(--trans-dur),
+		box-shadow var(--trans-dur);
+}
+.clock__block--small {
+	border-radius: 0.25rem;
+	box-shadow: 0 0.5rem 2rem hsla(var(--hue),90%,50%,0.3);
+	font-size: 1em;
+	line-height: 3;
+	width: 3rem;
+	height: 3rem;
+}
+.clock__colon {
+	display: none;
+	font-size: 2em;
+	opacity: 0.5;
+	position: relative;
+}
+.clock__colon:before,
+.clock__colon:after {
+	background-color: currentColor;
+	border-radius: 50%;
+	content: "";
+	display: block;
+	position: absolute;
+	top: -0.05em;
+	left: -0.05em;
+	width: 0.1em;
+	height: 0.1em;
+	transition: background-color var(--trans-dur);
+}
+.clock__colon:before {
+	transform: translateY(-200%);
+}
+.clock__colon:after {
+	transform: translateY(200%);	
+}
+.clock__digit-group {
+	display: flex;
+	flex-direction: column-reverse;
+}
+.clock__digits {
+	width: 100%;
+	height: 100%;
+}
+.clock__block--bounce {
+	animation: bounce 0.75s; 
+}
+.clock__block--bounce .clock__digit-group {
+	animation: roll 0.75s ease-in-out forwards; 
+	transform: translateY(-50%);
+}
+.clock__block--delay1,
+.clock__block--delay1 .clock__digit-group {
+	animation-delay: 0.1s;
+}
+.clock__block--delay2,
+.clock__block--delay2 .clock__digit-group {
+	animation-delay: 0.2s;
 }
 
-  #next,#back{
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),10%,10%);
+		--fg: hsl(var(--hue),10%,90%);
+	}
+	.clock__block {
+		background-color: hsl(var(--hue),90%,40%);
+		box-shadow: 0 1rem 2rem hsla(var(--hue),90%,60%,0.4);
+	}
+	.clock__block--small {
+		box-shadow: 0 0.5rem 2rem hsla(var(--hue),90%,60%,0.4);
+	}
+}
+
+/* Beyond mobile */
+@media (min-width: 768px) {
+	.clock {
+		flex-direction: row;
+	}
+	.clock__colon {
+		display: inherit;
+	}
+}
+
+/* Animations */
+@keyframes bounce {
+	from,
+	to {
+		animation-timing-function: ease-in;
+		transform: translateY(0);
+	}
+	50% {
+		animation-timing-function: ease-out;
+		transform: translateY(15%);
+	}
+}
+@keyframes roll {
+	from {
+		transform: translateY(-50%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+#next,#back{
             padding: 545px 10px 545px 10px;
             background-color:#AFB4E0 ;
             transform: translate(0%, -50%);
@@ -73,167 +209,131 @@ text-align: center;
 #next,#back{
         display: none;
       }
-      
-        </style>
 
+	</style>
 </head>
 <body>
-<h4 id="coord">SVG MAP Browser Coordinates</h4>
-<p>Using <a href="http://interactjs.io/">InteractJS</a> to handle drag of elements. 
-  <span id='infoMove'></span>    
-  </p>
-
-<svg id="mysvg" version="1.2"
-     xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="100%" height="500" style="border:1px ; ">
-   </div> 
-     <defs>
-         <circle id="point-handle"
-             r="10" x="0" y="0"
-             stroke-width="4"
-             fill="#fff"
-             fill-opacity="0.4"
-             stroke="#fff"/>
-     </defs>
-   
-     <polygon id="edit-star"
-       stroke="#29e"
-       stroke-width="20"
-       stroke-linejoin="round"
-       fill="none"
-         points="260.86,219.78 297.81,334.62 200,264 102.19,334.62 139.13,219.78 41.74,148.58 162.38,148.22 200,33.6 237.62,148.22 358.25,148.58"/>
-
-</svg>
-</polygon>
+	<div class="clock" aria-label="00:00:00 AM">
+	<div class="clock__block clock__block--delay2" aria-hidden="true" data-time-group>
+		<div class="clock__digit-group">
+			<div class="clock__digits" data-time="a">00</div>
+			<div class="clock__digits" data-time="b">00</div>
+		</div>
+	</div>
+	<div class="clock__colon"></div>
+	<div class="clock__block clock__block--delay1" aria-hidden="true" data-time-group>
+		<div class="clock__digit-group">
+			<div class="clock__digits" data-time="a">00</div>
+			<div class="clock__digits" data-time="b">00</div>
+		</div>
+	</div>
+	<div class="clock__colon"></div>
+	<div class="clock__block" aria-hidden="true" data-time-group>
+		<div class="clock__digit-group">
+			<div class="clock__digits" data-time="a">00</div>
+			<div class="clock__digits" data-time="b">00</div>
+		</div>
+	</div>
+	<div class="clock__block clock__block--delay2 clock__block--small" aria-hidden="true" data-time-group>
+		<div class="clock__digit-group">
+			<div class="clock__digits" data-time="a">PM</div>
+			<div class="clock__digits" data-time="b">AM</div>
+		</div>
+	</div>
+</div>
 
 <script>
-  // wait for external resources to load if any
-  window.addEventListener('load', () => {    
-     }) // end of window.load
-   const getPosXY = (event) => {      
-      let rect = event.target.getBoundingClientRect()
-      let x = event.offsetX || event.pageX - rect.left - window.scrollX
-      let y = event.offsetY || event.pageY - rect.top - window.scrollY
-      return [x, y]
-    }
-    const getEl = (id) => document.getElementById(id)
-    const sns="http://www.w3.org/2000/svg"
-    const xns="http://www.w3.org/1999/xlink"
-    const root = getEl('mysvg')
-    const star = getEl('edit-star')
-    const coord = getEl('coord')    
-    var rootMatrix
-    var originalPoints = []
-    var transformedPoints = []
-    root.addEventListener('mousemove', (event) => {
-      let [x, y] = getPosXY(event)
-      coord.innerText = `x,y = ${x},${y}`
-    })
-    // BEGIN SECTION CODE TO DRAG POINTS OF THE STAR POLYGON
-    for (let i = 0, len = star.points.numberOfItems; i < len; i++) {
-        let handle = document.createElementNS(sns, 'use')
-        let point = star.points.getItem(i)
-        let newPoint = root.createSVGPoint()
+	window.addEventListener("DOMContentLoaded",() => {
+	const clock = new BouncyBlockClock(".clock");
+});
 
-        handle.setAttributeNS(xns, 'href', '#point-handle')
-        handle.setAttribute('class', 'point-handle')
+class BouncyBlockClock {
+	constructor(qs) {
+		this.el = document.querySelector(qs);
+		this.time = { a: [], b: [] };
+		this.rollClass = "clock__block--bounce";
+		this.digitsTimeout = null;
+		this.rollTimeout = null;
+		this.mod = 0 * 60 * 1000;
 
-        handle.x.baseVal.value = newPoint.x = point.x
-        handle.y.baseVal.value = newPoint.y = point.y
+		this.loop();
+	}
+	animateDigits() {
+		const groups = this.el.querySelectorAll("[data-time-group]");
 
-        handle.setAttribute('data-index', i)
+		Array.from(groups).forEach((group,i) => {
+			const { a, b } = this.time;
 
-        originalPoints.push(newPoint)
-        root.appendChild(handle)
-    }
+			if (a[i] !== b[i]) group.classList.add(this.rollClass);
+		});
 
-    function applyTransforms (event) {
-        rootMatrix = root.getScreenCTM()
-        transformedPoints = originalPoints.map( (point) => point.matrixTransform(rootMatrix))        
+		clearTimeout(this.rollTimeout);
+		this.rollTimeout = setTimeout(this.removeAnimations.bind(this),900);
+	}
+	displayTime() {
+		// screen reader time
+		const timeDigits = [...this.time.b];
+		const ap = timeDigits.pop();
 
-        interact('.point-handle').draggable({
-            snap: {
-                targets: transformedPoints,
-                range: 20 * Math.max(rootMatrix.a, rootMatrix.d)
-            }
-        });
-    }
+		this.el.ariaLabel = `${timeDigits.join(":")} ${ap}`;
 
-    interact(root)
-        .on('mousedown', applyTransforms)
-        .on('touchstart', applyTransforms);
+		// displayed time
+		Object.keys(this.time).forEach(letter => {
+			const letterEls = this.el.querySelectorAll(`[data-time="${letter}"]`);
 
-    interact('.point-handle')
-        .draggable({
-            onstart: (event) => root.setAttribute('class', 'dragging'),
-            onmove: function (event) {
-                let i = event.target.getAttribute('data-index')|0
-                let point = star.points.getItem(i)
-                
-                point.x += event.dx / rootMatrix.a
-                point.y += event.dy / rootMatrix.d
+			Array.from(letterEls).forEach((el,i) => {
+				el.textContent = this.time[letter][i];
+			});
+		});
+	}
+	loop() {
+		this.updateTime();
+		this.displayTime();
+		this.animateDigits();
+		this.tick();
+	}
+	removeAnimations() {
+		const groups = this.el.querySelectorAll("[data-time-group]");
+	
+		Array.from(groups).forEach(group => {
+			group.classList.remove(this.rollClass);
+		});
+	}
+	tick() {
+		clearTimeout(this.digitsTimeout);
+		this.digitsTimeout = setTimeout(this.loop.bind(this),1e3);	
+	}
+	updateTime() {
+		const rawDate = new Date();
+		const date = new Date(Math.ceil(rawDate.getTime() / 1e3) * 1e3 + this.mod);
+		let h = date.getHours();
+		const m = date.getMinutes();
+		const s = date.getSeconds();
+		const ap = h < 12 ? "AM" : "PM";
 
-                event.target.x.baseVal.value = point.x;
-                event.target.y.baseVal.value = point.y;
-            },
-            onend: (event) => root.setAttribute('class', ''),
-            snap: {
-                targets: originalPoints,
-                range: 10,
-                relativePoints: [ { x: 0.5, y: 0.5 } ]
-            },
-            restrict: { restriction: document.rootElement }
-        })
-        .styleCursor(false);
+		if (h === 0) h = 12;
+		if (h > 12) h -= 12;
 
-    document.addEventListener('dragstart', (event) =>  event.preventDefault())      
-    // END SECTION CODE TO DRAG POINTS OF STAR  
-    interact('.godragit')
-    .draggable({
-        // enable inertial throwing
-        inertia: true,
-        // keep the element within the area of it's parent
-        restrict: {
-          restriction: "parent",
-          endOnly: true,
-          elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
-        },
-        // enable autoScroll
-        autoScroll: true,
+		this.time.a = [...this.time.b];
+		this.time.b = [
+			(h < 10 ? `0${h}` : `${h}`),
+			(m < 10 ? `0${m}` : `${m}`),
+			(s < 10 ? `0${s}` : `${s}`),
+			ap
+		];
 
-        // call this function on every dragmove event
-        onmove: dragMoveListener,
-        // call this function on every dragend event
-        onend: (event) => {
-          let info = getEl('infoMove')
-          let distance = (Math.sqrt(Math.pow(event.pageX - event.x0, 2) + Math.pow(event.pageY - event.y0, 2) | 0)).toFixed(2)
-          console .log(`moved a distance of ${distance} px`)
-          info.innerText = `moved a distance of ${distance} px`
-        }
-      });
-      function dragMoveListener (event) {
-        var target = event.target,
-            // keep the dragged position in the data-x/data-y attributes
-            x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-            y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+		if (!this.time.a.length) this.time.a = [...this.time.b];
+	}
+}
+	
 
-        // translate the element
-        target.style.webkitTransform =
-        target.style.transform =
-          'translate(' + x + 'px, ' + y + 'px)';
-
-        // update the posiion attributes
-        target.setAttribute('data-x', x);
-        target.setAttribute('data-y', y);
-      }
 </script>
-<a id="back" href="task73.html">Back</a>  
+<a id="back" href="task74.html">Back</a>  
 
-<a id="next" href="task75.html">Next</a> 
+<a id="next" href="task76.html">Next</a> 
 
-<a id="back2" href="task73.html">◀</a> 
+<a id="back2" href="task74.html">◀</a> 
 
-<a id="next2" href="task75.html">▶</a> 
+<a id="next2" href="task76.html">▶</a> 
 </body>
 </html>
