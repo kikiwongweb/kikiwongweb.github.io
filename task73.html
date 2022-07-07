@@ -35,7 +35,55 @@
 
 .tap-target.large {
   transform: scale(1.25);
-}</style>
+}
+#next,#back{
+            padding: 100% 10px 100% 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, -50%);
+            color:#000000 ;
+            text-decoration: none;
+          }
+
+
+
+         
+
+          #next{
+            position: absolute;
+            top: 50%;
+            right: 0px;
+          }
+
+          #back{
+            position: absolute;
+            top: 50%;
+            left: 0px;
+
+          }
+
+        
+
+         
+          a:hover {
+            background-color: #FEFBFC;
+          }
+
+           #next2{
+            position: absolute;
+            top: 0%;
+            right: 0px;
+            border-bottom-left-radius: 5px ;
+          }
+
+          #back2{
+            position: absolute;
+            top:  0%;
+            left: 0px;
+            border-bottom-right-radius: 5px;
+
+          }
+
+</style>
 </head>
 <body>
 <div class="tap-target">
@@ -72,5 +120,12 @@ interact('.tap-target')
   })
 </script>
 </script>
+<a id="back" href="task72.html">Back</a>  
+
+<a id="next" href="task74.html">Next</a> 
+
+<a id="back2" href="task72.html">◀</a> 
+
+<a id="next2" href="task74.html">▶</a> 
 </body>
 </html>
