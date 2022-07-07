@@ -37,16 +37,12 @@
   transform: scale(1.25);
 }
 #next,#back{
-            padding: 100% 10px 100% 10px;
+            padding: 545px 10px 545px 10px;
             background-color:#AFB4E0 ;
             transform: translate(0%, -50%);
             color:#000000 ;
             text-decoration: none;
           }
-
-
-
-         
 
           #next{
             position: absolute;
@@ -60,14 +56,6 @@
             left: 0px;
 
           }
-
-        
-
-         
-          a:hover {
-            background-color: #FEFBFC;
-          }
-
            #next2{
             position: absolute;
             top: 0%;
@@ -82,6 +70,26 @@
             border-bottom-right-radius: 5px;
 
           }
+
+        
+
+  #next2,#back2{
+     padding: 7px 10px 7px 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, 0%);
+            color:#000000 ;
+            text-decoration: none;
+            display: none;
+          }
+
+  @media only screen and (max-width: 600px) {
+#next2,#back2{
+   display: block;
+          }        
+
+#next,#back{
+        display: none;
+      }
 
 </style>
 </head>
