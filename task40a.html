@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task41</title>
+
+    <style type="text/css">
+        html{
+            text-align: center;
+        }
+        .tooltip {
+ position: relative;
+ display: inline-block;
+}
+
+.tooltip .tooltiptext {
+ visibility: hidden;
+ color: #fff;
+ text-align: center;
+ border-radius: 6px;
+ position: absolute;
+ z-index: 1;
+ top:100%;
+ left: -100%;
+ opacity: 0;
+ transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+ content: "";
+ position: absolute;
+ top: 100%;
+ left: 50%;
+}
+
+.tooltip:hover .tooltiptext {
+ visibility: visible;
+ opacity: 1;
+}
+
+img{
+ border-radius: 25px;
+}
+
+#next,#back{
+            padding: 100% 10px 100% 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, -50%);
+            color:#000000 ;
+            text-decoration: none;
+          }
+
+
+
+         
+
+          #next{
+            position: absolute;
+            top: 50%;
+            right: 0px;
+          }
+
+          #back{
+            position: absolute;
+            top: 50%;
+            left: 0px;
+
+          }
+
+        
+
+         
+          a:hover {
+            background-color: #FEFBFC;
+          }
+           #next2{
+            position: absolute;
+            top: 0%;
+            right: 0px;
+            border-bottom-left-radius: 5px ;
+          }
+
+          #back2{
+            position: absolute;
+            top:  0%;
+            left: 0px;
+            border-bottom-right-radius: 5px;
+
+          }
+
+        
+
+  #next2,#back2{
+     padding: 7px 10px 7px 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, 0%);
+            color:#000000 ;
+            text-decoration: none;
+            display: none;
+          }
+
+  @media only screen and (max-width: 600px) {
+#next2,#back2{
+   display: block;
+          }        
+
+#next,#back{
+        display: none;
+      }
+    </style>
+</head>
+
+<body>
+    <h2>Tooltip</h2>
+<p>Move the mouse over the text below:</p>
+
+<div class="tooltip">Hover over me
+ <span class="tooltiptext"><img src="https://food-images.files.bbci.co.uk/food/recipes/rainbow_cake_20402_16x9.jpg" width=300px ></span>
+</div>
+<a id="back" href="task39.html">Back</a>  
+
+<a id="next" href="task41.html">Next</a> 
+
+<a id="back2" href="task39.html">◀</a> 
+
+<a id="next2" href="task37.html">▶</a> 
+
+</body>
+</html>
