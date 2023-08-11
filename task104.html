@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Random Item</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Images/random.png" type="image/png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Twinkle+Star&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=_OnCH_JdLIrkjGuIrCSePfeLrPJzG4_RInFbZtYq73o_GEbsQO0mypy0klHC3FLAijZZxPQVaD84vE1E7x8TeA" charset="UTF-8"></script><style>
+
+  body{
+    background-color:#DBE8E6;
+    font-family: 'Twinkle Star', cursive;
+    padding-top: 200px;
+    color: #649B93;
+    text-align: center;
+  }
+
+  button{
+  width: 100px;
+  height: 75px;   
+  background-color: #89B3AC; 
+  border: none;
+  color: white;
+  border-radius: 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 20px;
+
+
+
+  }
+
+  a{
+            padding: 100% 10px 100% 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, -50%);
+            color:#000000 ;
+            text-decoration: none;
+          }
+
+
+
+         
+
+          #next{
+            position: absolute;
+            top: 50%;
+            right: 0px;
+          }
+
+          #back{
+            position: absolute;
+            top: 50%;
+            left: 0px;
+
+          }
+
+        
+
+         
+          a:hover {
+            background-color: #FEFBFC;
+          }
+           #next2{
+            position: absolute;
+            top: 0%;
+            right: 0px;
+            border-bottom-left-radius: 5px ;
+          }
+
+          #back2{
+            position: absolute;
+            top:  0%;
+            left: 0px;
+            border-bottom-right-radius: 5px;
+
+          }
+
+        
+
+  #next2,#back2{
+     padding: 7px 10px 7px 10px;
+            background-color:#AFB4E0 ;
+            transform: translate(0%, 0%);
+            color:#000000 ;
+            text-decoration: none;
+            display: none;
+          }
+
+  @media only screen and (max-width: 600px) {
+#next2,#back2{
+   display: block;
+          }        
+
+#next,#back{
+        display: none;
+      }
+
+</style>
+</head>
+<body>
+
+  <div class="container">
+  <img src="Images/icon_ran.gif"alt="Image"width="100px"><br><br>
+  <div id="display">
+    Let's Go!
+  </div>
+  <div id="buttons">
+    <button id="startStop" onclick="startStop();">Click Me To Generate A Random Food!</button>
+   
+  </div>
+</div>
+<audio loop id="myAudio">
+    <source id="myAudio" src="Music/RIREC.wav" type="audio/wav"></audio>
+    
+
+<script type="text/javascript"> 
+let status = 'stopped' ;
+const food=["Hong Kong",
+"Taiwan",
+"Japan",
+"South Korea",
+"North Korea",
+"Mongolia",
+"China",
+"Macau",
+"United Kingdom",
+"France",
+"Spain",
+"Portugal",
+"Netherlands",
+"Belgium",
+"Germany",
+"Ireland",
+"Canada",
+"United States",
+"Mexico",
+"Cuba",
+"Bahamas",
+"Jamaica",
+"Haiti",
+"Dominican Republic",
+"South Africa",
+"Lesotho",
+"Eswatini",
+"Mozambique",
+"Zimbabwe",
+"Botswana",
+"Namibia",
+"Angola",
+"Australia",
+"New Zealand",
+"Papua New Guinea",
+"Palau",
+"Fiji",
+"Tonga",
+"Vanuatu",
+"Solomon Islands",
+"Ecuador",
+"Peru",
+"Bolivia",
+"Paraguay",
+"Chile",
+"Argentina",
+"Uruguay",
+"Antarctica",
+"Jordan",
+"United Arab Emirates",
+"Qatar",
+"Kuwait",
+"Bahrain",
+"Saudi Arabia",
+"Yemen",
+"Oman",
+"Iceland",
+"Denmark",
+"Norway",
+"Sweden",
+"Finland",
+"Estonia",
+"Latvia",
+"Lithuania",
+"Morocco",
+"Algeria",
+"Tunisia",
+"Libya",
+"Egypt",
+"Sudan",
+"South Sudan",
+"Mauritania",
+"Philippines",
+"Samoa",
+"Tuvalu",
+"Marshall Islands",
+"Micronesia",
+"Nauru",
+"Kiribati",
+"French Polynesia",
+"India",
+"Pakistan",
+"Sri Lanka",
+"Maldives",
+"Bangladesh",
+"Nepal",
+"Bhutan",
+"Myanmar",
+"Russia",
+"Ukraine",
+"Belarus",
+"Poland",
+"Czech Republic",
+"Slovenia",
+"Slovakia",
+"Hungary",
+"Brazil",
+"Colombia",
+"Venezuela",
+"Suriname",
+"Guyana",
+"Grenada",
+"Trinidad and Tobago",
+"Barbados",
+"Ethiopia",
+"Eritrea",
+"Djibouti",
+"Somalia",
+"Kenya",
+"Uganda",
+"Rwanda",
+"Burundi",
+"Thailand",
+"Vietnam",
+"Laos",
+"Cambodia",
+"Malaysia",
+"Singapore",
+"Brunei",
+"Indonesia",
+"Greece",
+"Albania",
+"Montenegro",
+"Serbia",
+"Romania",
+"Bulgaria",
+"North Macedonia",
+"Bosnia and Herzegovina",
+"Belize",
+"Guatemala",
+"El Salvador",
+"Honduras",
+"Nicaragua",
+"Costa Rica",
+"Panama",
+"Cayman Islands",
+"Zambia",
+"Democratic Republic of Congo",
+"Congo",
+"Central African Republic",
+"Chad",
+"Niger",
+"Burkina Faso",
+"Mali",
+"Kazakhstan",
+"Kyrgyzstan",
+"Tajikistan",
+"Uzbekistan",
+"Turkmenistan",
+"Azerbaijan",
+"Georgia",
+"Armenia",
+"Italy",
+"Vatican City",
+"San Marino",
+"Malta",
+"Cyprus",
+"Austria",
+"Switzerland",
+"Croatia",
+"Saint Vincent and Grenadines",
+"Saint Lucia",
+"Antigua and Barbuda",
+"Dominica",
+"Saint Kitts and Nevis",
+"Bermuda",
+"Virgin Islands",
+"Puerto Rico",
+"Senegal",
+"Cape Verde (Cabo Verde)",
+"The Gambia",
+"Guinea-Bissau",
+"Guinea",
+"Sierra Leone",
+"Liberia",
+"Cote d’Ivoire",
+"Turkey",
+"Andorra",
+"Moldova",
+"Monaco",
+"Liechtenstein",
+"Luxembourg",
+"Kosovo",
+"Timor-Leste",
+"Ghana",
+"Togo",
+"Benin",
+"Nigeria",
+"Cameroon",
+"Equatorial Guinea",
+"Sao Tome and Principe",
+"Gabon",
+"Seychelles",
+"Tanzania",
+"Malawi",
+"Comoros",
+"Madagascar",
+"Mauritius",
+"Niue",
+"New Caledonia",
+"Afghanistan",
+"Iran",
+"Iraq",
+"Syria",
+"Lebanon","Israel",]
+
+function stopWatch(){
+  let randomIndex=Math.floor(Math.random()*food.length); 
+  document.getElementById("display").innerHTML = ("value",food[randomIndex]);
+}
+
+
+function startStop(){
+  if (status === "stopped"){
+
+    interval = window.setInterval(stopWatch,0);
+    document.getElementById("startStop").innerHTML = "Stop Generating";
+    playAudio();
+    status = "started";
+}
+
+else{
+
+  window.clearInterval(interval);
+  document.getElementById("startStop").innerHTML = "Start Again";
+  pauseAudio();
+  status = "stopped";
+    }
+}
+function playAudio(){
+  var a = document.getElementById("myAudio");
+      a.play();
+    }
+function pauseAudio(){
+
+  var a = document.getElementById("myAudio");
+      a.pause()
+}
+
+</script>
+
+<div> <div id="div2"> <div id="div3"> <div id="div4"> </div> </div> </div> </div> 
+
+
+
+
+
+<a id="back" href="task41.html">Back</a> 
+<a id="next" href="task43.html">Next</a>
+<a id="back2" href="task41.html">◀</a> 
+
+<a id="next2" href="task43.html">▶</a> 
+</body>
+</html>

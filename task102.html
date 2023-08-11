@@ -142,12 +142,12 @@ btn.addEventListener('click', function()
     var descrip = data['weather']['0']['description']
     var tempature = data['main']['temp']
     var wndspd = data['wind']['speed']
-    var humidity  = data['main']['humidity']
+    var hmd  = data['main']['humidity']
     city.innerHTML=`Weather of <span>${nameval}<span>`
     temp.innerHTML = `Temperature: <span>${ convertion(tempature)} C</span>`
     description.innerHTML = `Sky Conditions: <span>${descrip}<span>`
     wind.innerHTML = `Wind Speed: <span>${wndspd} km/h<span>`
-    humidity.innerHTML = `Humidity: <span>${humidity} %</span>`
+    humidity.innerHTML = `Humidity: <span>${hmd} %</span>`
 
   })
 
